@@ -15,7 +15,7 @@
     }
 
     body {
-      background-color: #fef9e7;
+      background-color: #fffbe6;
       color: #2e2416;
       line-height: 1.6;
     }
@@ -27,24 +27,23 @@
     }
 
     :root {
-      --amarelo: #f5c842;
-      --amarelo-pastel: #fcf3d4;
-      --dourado: #c29a3b;
-      --dourado-claro: #e6c87a;
-      --dourado-escuro: #a67c2e;
+      --amarelo-vivo: #FFD700;
+      --amarelo-queimado: #F5A623;
+      --amarelo-pastel: #FFF8DC;
+      --dourado: #D4A017;
+      --dourado-claro: #F0D060;
+      --dourado-escuro: #B8860B;
       --texto-escuro: #2e2416;
-      --sombra-suave: 0 12px 30px rgba(194, 154, 59, 0.2);
-      --setembro-amarelo: #f5b81b;
+      --sombra-suave: 0 12px 30px rgba(212, 160, 23, 0.25);
     }
 
-    /* cabeçalho */
     .header {
-      background: linear-gradient(145deg, #f8de8a, #f5c842);
+      background: linear-gradient(145deg, #FFE066, #FFD700);
       padding: 2rem 2rem 1.8rem;
       border-radius: 48px 48px 48px 12px;
       box-shadow: var(--sombra-suave);
       margin-bottom: 2.5rem;
-      border: 2px solid var(--dourado);
+      border: 3px solid var(--dourado);
       position: relative;
       overflow: hidden;
     }
@@ -61,7 +60,7 @@
 
     .header h1 {
       font-size: 3rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: -0.5px;
       color: #2e2416;
       display: flex;
@@ -71,32 +70,31 @@
     }
 
     .header h1 i {
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       font-size: 2.8rem;
-      filter: drop-shadow(0 2px 4px rgba(194, 154, 59, 0.4));
+      filter: drop-shadow(0 2px 4px rgba(184, 134, 11, 0.4));
     }
 
     .header p {
       font-size: 1.25rem;
       margin-top: 0.5rem;
       color: #2e2416;
-      background: rgba(255, 248, 220, 0.5);
+      background: rgba(255, 255, 255, 0.6);
       display: inline-block;
       padding: 0.3rem 1.2rem;
       border-radius: 40px;
       backdrop-filter: blur(2px);
-      font-weight: 500;
-      border: 1px solid var(--dourado);
+      font-weight: 600;
+      border: 2px solid var(--dourado);
     }
 
-    /* BANNER SETEMBRO AMARELO */
     .setembro-banner {
-      background: linear-gradient(135deg, #fcf3d4, #f5c842);
+      background: linear-gradient(135deg, #FFF8DC, #FFD700);
       padding: 1.8rem 2rem;
       border-radius: 60px 12px 60px 12px;
       margin-bottom: 2rem;
       border: 3px solid var(--dourado);
-      box-shadow: 0 8px 25px rgba(194, 154, 59, 0.3);
+      box-shadow: 0 8px 25px rgba(212, 160, 23, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -110,13 +108,13 @@
 
     .setembro-banner:hover {
       transform: scale(1.01);
-      box-shadow: 0 12px 35px rgba(194, 154, 59, 0.4);
+      box-shadow: 0 12px 35px rgba(212, 160, 23, 0.45);
     }
 
     .setembro-banner .laco {
       font-size: 3.5rem;
-      color: var(--dourado);
-      filter: drop-shadow(0 2px 8px rgba(194, 154, 59, 0.4));
+      color: var(--dourado-escuro);
+      filter: drop-shadow(0 2px 8px rgba(184, 134, 11, 0.4));
     }
 
     .setembro-banner .texto-banner h2 {
@@ -133,7 +131,7 @@
     }
 
     .setembro-banner .texto-banner .destaque {
-      background: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.5);
       padding: 0.2rem 1rem;
       border-radius: 40px;
       display: inline-block;
@@ -147,7 +145,7 @@
       left: 50%;
       transform: translateX(-50%) translateY(100%);
       background: #2e2416;
-      color: #fef9e7;
+      color: #fffbe6;
       padding: 0.5rem 1.5rem;
       border-radius: 40px;
       font-size: 0.9rem;
@@ -164,9 +162,8 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    /* SEÇÃO DE MENSAGENS DE APOIO */
     .mensagens-apoio {
-      background: linear-gradient(135deg, #fcf3d4, #fff8e0);
+      background: linear-gradient(135deg, #FFF8DC, #FFFDE7);
       padding: 2.2rem 2.5rem 2.8rem;
       border-radius: 40px 12px 40px 12px;
       margin: 2.5rem 0;
@@ -195,8 +192,8 @@
 
     .mensagens-apoio .apoio-header .apoio-icon {
       font-size: 2.8rem;
-      color: var(--dourado);
-      background: rgba(194, 154, 59, 0.12);
+      color: var(--dourado-escuro);
+      background: rgba(212, 160, 23, 0.12);
       width: 70px;
       height: 70px;
       display: flex;
@@ -213,7 +210,7 @@
     }
 
     .mensagens-apoio .apoio-header h2 span {
-      color: var(--dourado);
+      color: var(--dourado-escuro);
     }
 
     .mensagens-apoio .apoio-grid {
@@ -224,7 +221,7 @@
     }
 
     .mensagens-apoio .apoio-grid .grupo-msg {
-      background: rgba(255, 252, 235, 0.75);
+      background: rgba(255, 255, 255, 0.75);
       padding: 1.5rem 1.8rem;
       border-radius: 30px 8px 30px 8px;
       border: 2px solid var(--dourado-claro);
@@ -233,7 +230,7 @@
 
     .mensagens-apoio .apoio-grid .grupo-msg:hover {
       transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(194, 154, 59, 0.15);
+      box-shadow: 0 10px 25px rgba(212, 160, 23, 0.15);
       border-color: var(--dourado);
     }
 
@@ -262,7 +259,7 @@
     }
 
     .mensagens-apoio .apoio-grid .grupo-msg h3 i {
-      color: var(--dourado);
+      color: var(--dourado-escuro);
     }
 
     .mensagens-apoio .apoio-grid .grupo-msg .msg-lista {
@@ -276,7 +273,7 @@
       padding: 0.5rem 0;
       padding-left: 2rem;
       position: relative;
-      border-bottom: 1px dashed rgba(194, 154, 59, 0.1);
+      border-bottom: 1px dashed rgba(212, 160, 23, 0.1);
     }
 
     .mensagens-apoio .apoio-grid .grupo-msg .msg-lista li:last-child {
@@ -293,7 +290,7 @@
     .mensagens-apoio .apoio-grid .grupo-msg .msg-lista li .autor-msg {
       display: block;
       font-size: 0.75rem;
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       font-weight: 500;
       margin-top: 0.1rem;
       font-style: italic;
@@ -308,9 +305,8 @@
       }
     }
 
-    /* SEÇÃO ESPECIAL ALUNOS ENSINO MÉDIO */
     .alunos-section {
-      background: linear-gradient(135deg, #fcf3d4, #fff8e0);
+      background: linear-gradient(135deg, #FFF8DC, #FFFDE7);
       padding: 2.2rem 2.5rem 2.8rem;
       border-radius: 40px 12px 40px 12px;
       margin: 2.5rem 0;
@@ -339,8 +335,8 @@
 
     .alunos-section .alunos-header .alunos-icon {
       font-size: 2.8rem;
-      color: var(--dourado);
-      background: rgba(194, 154, 59, 0.12);
+      color: var(--dourado-escuro);
+      background: rgba(212, 160, 23, 0.12);
       width: 70px;
       height: 70px;
       display: flex;
@@ -357,14 +353,14 @@
     }
 
     .alunos-section .alunos-header h2 span {
-      color: var(--dourado);
+      color: var(--dourado-escuro);
     }
 
     .alunos-section .alunos-sub {
       font-size: 1.05rem;
       color: #2e2416;
       margin-bottom: 1.2rem;
-      background: rgba(194, 154, 59, 0.08);
+      background: rgba(212, 160, 23, 0.08);
       padding: 0.4rem 1.4rem;
       border-radius: 40px;
       display: inline-block;
@@ -380,7 +376,7 @@
     }
 
     .alunos-section .alunos-grid .ano-card {
-      background: rgba(255, 252, 235, 0.75);
+      background: rgba(255, 255, 255, 0.75);
       padding: 1.5rem 1.8rem;
       border-radius: 30px 8px 30px 8px;
       border: 2px solid var(--dourado-claro);
@@ -390,7 +386,7 @@
 
     .alunos-section .alunos-grid .ano-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(194, 154, 59, 0.2);
+      box-shadow: 0 12px 28px rgba(212, 160, 23, 0.2);
       border-color: var(--dourado);
     }
 
@@ -418,7 +414,7 @@
     }
 
     .alunos-section .alunos-grid .ano-card h3 i {
-      color: var(--dourado);
+      color: var(--dourado-escuro);
     }
 
     .alunos-section .alunos-grid .ano-card .ano-desc {
@@ -438,7 +434,7 @@
       padding: 0.3rem 0;
       padding-left: 1.6rem;
       position: relative;
-      border-bottom: 1px dashed rgba(194, 154, 59, 0.15);
+      border-bottom: 1px dashed rgba(212, 160, 23, 0.15);
     }
 
     .alunos-section .alunos-grid .ano-card .ano-lista li:last-child {
@@ -453,7 +449,7 @@
     }
 
     .alunos-section .alunos-dicas {
-      background: rgba(194, 154, 59, 0.06);
+      background: rgba(212, 160, 23, 0.06);
       padding: 1.2rem 1.8rem;
       border-radius: 30px;
       border-left: 5px solid var(--dourado);
@@ -462,7 +458,7 @@
 
     .alunos-section .alunos-dicas h4 {
       font-size: 1.1rem;
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
@@ -482,7 +478,7 @@
     }
 
     .alunos-section .alunos-dicas .dicas-tags span {
-      background: #fcf3d4;
+      background: #FFF8DC;
       padding: 0.2rem 1rem;
       border-radius: 40px;
       font-size: 0.8rem;
@@ -500,10 +496,9 @@
       }
     }
 
-    /* SEÇÃO MIKE EMME */
     .mike-section {
-      background: linear-gradient(135deg, #fcf3d4, #fffcf0);
-      padding: 2rem 2.5rem;
+      background: linear-gradient(135deg, #FFF8DC, #FFFDE7);
+      padding: 2.5rem 2.5rem 2.8rem;
       border-radius: 40px 12px 40px 12px;
       margin: 2.5rem 0;
       border: 3px solid var(--dourado);
@@ -518,7 +513,7 @@
       right: -20px;
       bottom: -20px;
       font-size: 8rem;
-      opacity: 0.08;
+      opacity: 0.06;
       transform: rotate(-10deg);
     }
 
@@ -532,8 +527,8 @@
 
     .mike-section .mike-header .mike-icon {
       font-size: 3.5rem;
-      color: var(--dourado);
-      background: rgba(194, 154, 59, 0.12);
+      color: var(--dourado-escuro);
+      background: rgba(212, 160, 23, 0.12);
       width: 80px;
       height: 80px;
       display: flex;
@@ -545,24 +540,57 @@
 
     .mike-section .mike-header h2 {
       font-size: 2.2rem;
-      font-weight: 600;
+      font-weight: 700;
       color: #2e2416;
     }
 
     .mike-section .mike-header h2 span {
-      color: var(--dourado);
+      color: var(--dourado-escuro);
     }
 
     .mike-section .mike-sub {
       font-size: 1.1rem;
       color: #2e2416;
-      margin-bottom: 1rem;
-      background: rgba(194, 154, 59, 0.08);
+      margin-bottom: 1.2rem;
+      background: rgba(212, 160, 23, 0.08);
       padding: 0.3rem 1.2rem;
       border-radius: 40px;
       display: inline-block;
       border: 2px dashed var(--dourado);
       font-weight: 500;
+    }
+
+    .mike-section .mike-historia {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 1.5rem 2rem;
+      border-radius: 30px;
+      border: 2px solid var(--dourado-claro);
+      margin-bottom: 1.5rem;
+    }
+
+    .mike-section .mike-historia h3 {
+      font-size: 1.3rem;
+      color: var(--dourado-escuro);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mike-section .mike-historia p {
+      font-size: 1rem;
+      color: #2e2416;
+      line-height: 1.8;
+      margin-bottom: 0.8rem;
+    }
+
+    .mike-section .mike-historia .destaque-historia {
+      background: rgba(255, 215, 0, 0.15);
+      padding: 0.8rem 1.2rem;
+      border-radius: 20px;
+      border-left: 4px solid var(--dourado);
+      font-weight: 500;
+      margin: 0.8rem 0;
     }
 
     .mike-section .mike-grid {
@@ -573,7 +601,7 @@
     }
 
     .mike-section .mike-grid .mike-card {
-      background: rgba(255, 252, 235, 0.7);
+      background: rgba(255, 255, 255, 0.7);
       padding: 1.2rem 1.5rem;
       border-radius: 30px 8px 30px 8px;
       border: 2px solid var(--dourado-claro);
@@ -582,13 +610,13 @@
 
     .mike-section .mike-grid .mike-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(194, 154, 59, 0.15);
+      box-shadow: 0 8px 20px rgba(212, 160, 23, 0.15);
       border-color: var(--dourado);
     }
 
     .mike-section .mike-grid .mike-card h4 {
       font-size: 1.1rem;
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       margin-bottom: 0.4rem;
       display: flex;
       align-items: center;
@@ -602,8 +630,8 @@
 
     .mike-section .mike-legado {
       margin-top: 1.5rem;
-      background: rgba(194, 154, 59, 0.06);
-      padding: 1rem 1.5rem;
+      background: rgba(212, 160, 23, 0.08);
+      padding: 1.2rem 1.8rem;
       border-radius: 30px;
       border-left: 5px solid var(--dourado);
       font-style: italic;
@@ -611,8 +639,55 @@
     }
 
     .mike-section .mike-legado i {
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       margin-right: 8px;
+    }
+
+    .mike-links {
+      margin-top: 1.5rem;
+      padding: 1.2rem 1.8rem;
+      background: rgba(255, 248, 220, 0.6);
+      border-radius: 30px;
+      border: 2px solid var(--dourado-claro);
+    }
+
+    .mike-links h4 {
+      color: var(--dourado-escuro);
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mike-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .mike-links ul li {
+      padding: 0.3rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .mike-links ul li::before {
+      content: "🔗";
+      position: absolute;
+      left: 0;
+      font-size: 0.8rem;
+    }
+
+    .mike-links ul li a {
+      color: var(--dourado-escuro);
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .mike-links ul li a:hover {
+      color: var(--dourado);
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -629,7 +704,6 @@
       }
     }
 
-    /* cartões principais */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -638,14 +712,14 @@
     }
 
     .card {
-      background: #fffdf3;
+      background: #FFFDF5;
       border-radius: 32px 12px 32px 12px;
       padding: 1.8rem 1.8rem 2rem;
       box-shadow: var(--sombra-suave);
       border-left: 6px solid var(--dourado);
       transition: transform 0.2s ease, box-shadow 0.2s;
       backdrop-filter: blur(2px);
-      background: rgba(255, 253, 240, 0.8);
+      background: rgba(255, 253, 245, 0.9);
       border: 1px solid var(--dourado-claro);
       position: relative;
       cursor: pointer;
@@ -653,14 +727,14 @@
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 30px rgba(194, 154, 59, 0.25);
-      border-left-color: var(--dourado);
+      box-shadow: 0 20px 30px rgba(212, 160, 23, 0.25);
+      border-left-color: var(--dourado-escuro);
     }
 
     .card i {
       font-size: 2.6rem;
-      color: var(--dourado);
-      background: #fcf3d4;
+      color: var(--dourado-escuro);
+      background: #FFF8DC;
       padding: 0.6rem;
       border-radius: 30px;
       margin-bottom: 1rem;
@@ -705,9 +779,8 @@
       transform: translateY(0);
     }
 
-    /* SEÇÃO NÚMEROS DE EMERGÊNCIA */
     .emergencia-section {
-      background: linear-gradient(135deg, #fcf3d4, #f8e6b0);
+      background: linear-gradient(135deg, #FFF8DC, #FFEECC);
       padding: 2rem 2rem 2.5rem;
       border-radius: 40px 12px 40px 12px;
       margin: 2.5rem 0;
@@ -716,7 +789,7 @@
 
     .emergencia-section h2 {
       font-size: 2.2rem;
-      font-weight: 500;
+      font-weight: 600;
       color: #2e2416;
       display: flex;
       align-items: center;
@@ -725,7 +798,7 @@
     }
 
     .emergencia-section h2 i {
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       font-size: 2.2rem;
     }
 
@@ -736,12 +809,12 @@
     }
 
     .numero-card {
-      background: rgba(255, 252, 235, 0.8);
+      background: #FFFDE7;
       backdrop-filter: blur(2px);
       padding: 1.2rem 1.4rem;
       border-radius: 40px 12px 40px 12px;
       border: 2px solid var(--dourado-claro);
-      box-shadow: 0 4px 10px rgba(194, 154, 59, 0.08);
+      box-shadow: 0 4px 10px rgba(212, 160, 23, 0.08);
       transition: 0.2s;
       text-align: center;
       position: relative;
@@ -751,16 +824,16 @@
     .numero-card:hover {
       transform: translateY(-4px);
       border-color: var(--dourado);
-      background: #fef7d4;
-      box-shadow: 0 8px 18px rgba(194, 154, 59, 0.2);
+      background: #FFF8DC;
+      box-shadow: 0 8px 18px rgba(212, 160, 23, 0.2);
     }
 
     .numero-card .num {
       font-size: 2.4rem;
       font-weight: 700;
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       letter-spacing: 1px;
-      background: #fcf3d4;
+      background: #FFF8DC;
       display: inline-block;
       padding: 0.2rem 1.2rem;
       border-radius: 60px;
@@ -785,7 +858,7 @@
       top: -10px;
       right: -10px;
       background: #2e2416;
-      color: #fef9e7;
+      color: #fffbe6;
       padding: 0.2rem 0.8rem;
       border-radius: 30px;
       font-size: 0.7rem;
@@ -800,9 +873,8 @@
       transform: scale(1);
     }
 
-    /* SEÇÃO ONGs */
     .ongs-section {
-      background: #fffcf0;
+      background: #FFFDF5;
       padding: 2rem 2rem 2.5rem;
       border-radius: 40px 12px 40px 12px;
       margin: 2.5rem 0;
@@ -812,7 +884,7 @@
 
     .ongs-section h2 {
       font-size: 2.2rem;
-      font-weight: 500;
+      font-weight: 600;
       color: #2e2416;
       display: flex;
       align-items: center;
@@ -821,7 +893,7 @@
     }
 
     .ongs-section h2 i {
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       font-size: 2.2rem;
     }
 
@@ -832,7 +904,7 @@
     }
 
     .ong-card {
-      background: rgba(255, 253, 240, 0.7);
+      background: #FFFDE7;
       backdrop-filter: blur(2px);
       padding: 1.4rem 1.4rem 1.6rem;
       border-radius: 40px 12px 40px 12px;
@@ -841,21 +913,21 @@
       text-decoration: none;
       color: #2e2416;
       display: block;
-      box-shadow: 0 4px 8px rgba(194, 154, 59, 0.06);
+      box-shadow: 0 4px 8px rgba(212, 160, 23, 0.06);
       position: relative;
     }
 
     .ong-card:hover {
       transform: translateY(-6px);
       border-color: var(--dourado);
-      background: #fef7d4;
-      box-shadow: 0 12px 24px rgba(194, 154, 59, 0.2);
+      background: #FFF8DC;
+      box-shadow: 0 12px 24px rgba(212, 160, 23, 0.2);
     }
 
     .ong-card .ong-icon {
       font-size: 2rem;
-      color: var(--dourado);
-      background: #fcf3d4;
+      color: var(--dourado-escuro);
+      background: #FFF8DC;
       width: 56px;
       height: 56px;
       display: flex;
@@ -881,7 +953,7 @@
     .ong-card .ong-link {
       font-size: 0.85rem;
       font-weight: 500;
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -890,7 +962,7 @@
 
     .ong-card:hover .ong-link {
       transform: translateX(6px);
-      color: var(--dourado-escuro);
+      color: var(--dourado);
     }
 
     .ong-hidden-msg {
@@ -898,10 +970,10 @@
       bottom: 8px;
       right: 12px;
       font-size: 0.7rem;
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       opacity: 0;
       transition: 0.3s;
-      background: #fcf3d4;
+      background: #FFF8DC;
       padding: 0.15rem 0.8rem;
       border-radius: 30px;
       border: 1px solid var(--dourado-claro);
@@ -911,9 +983,8 @@
       opacity: 1;
     }
 
-    /* PESQUISAS (balões) */
     .pesquisas-section {
-      background: linear-gradient(135deg, #fcf3d4, #f8e6b0);
+      background: linear-gradient(135deg, #FFF8DC, #FFEECC);
       padding: 2.2rem 2rem 2.8rem;
       border-radius: 40px 12px 40px 12px;
       margin: 2.5rem 0;
@@ -922,7 +993,7 @@
 
     .pesquisas-section h2 {
       font-size: 2.2rem;
-      font-weight: 500;
+      font-weight: 600;
       color: #2e2416;
       display: flex;
       align-items: center;
@@ -931,23 +1002,23 @@
     }
 
     .pesquisas-section h2 i {
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       font-size: 2.2rem;
     }
 
     .pesquisas-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.8rem;
     }
 
     .pesquisa-card {
-      background: rgba(255, 252, 235, 0.85);
+      background: #FFFDE7;
       backdrop-filter: blur(2px);
       padding: 1.6rem 1.6rem 1.8rem;
       border-radius: 60px 16px 60px 16px;
       border: 2px solid var(--dourado-claro);
-      box-shadow: 0 6px 14px rgba(194, 154, 59, 0.10);
+      box-shadow: 0 6px 14px rgba(212, 160, 23, 0.10);
       transition: all 0.25s ease;
       cursor: pointer;
       text-decoration: none;
@@ -970,8 +1041,8 @@
     .pesquisa-card:hover {
       transform: translateY(-8px) scale(1.01);
       border-color: var(--dourado);
-      box-shadow: 0 18px 30px rgba(194, 154, 59, 0.3);
-      background: #fef7d4;
+      box-shadow: 0 18px 30px rgba(212, 160, 23, 0.3);
+      background: #FFF8DC;
     }
 
     .pesquisa-card:hover::before {
@@ -981,8 +1052,8 @@
 
     .pesquisa-card .icone-pesq {
       font-size: 2.2rem;
-      color: var(--dourado);
-      background: #fcf3d4;
+      color: var(--dourado-escuro);
+      background: #FFF8DC;
       width: 60px;
       height: 60px;
       display: flex;
@@ -994,7 +1065,7 @@
     }
 
     .pesquisa-card h3 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 600;
       color: #2e2416;
       margin-bottom: 0.4rem;
@@ -1005,7 +1076,7 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: #2e2416;
-      background: #f5e1a0;
+      background: #FFEECC;
       display: inline-block;
       padding: 0.15rem 1rem;
       border-radius: 30px;
@@ -1024,13 +1095,13 @@
       display: inline-block;
       margin-top: 0.8rem;
       font-weight: 600;
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       transition: 0.2s;
     }
 
     .pesquisa-card:hover .seta {
       transform: translateX(6px);
-      color: var(--dourado-escuro);
+      color: var(--dourado);
     }
 
     .pesquisa-hidden-msg {
@@ -1038,10 +1109,10 @@
       bottom: 8px;
       left: 16px;
       font-size: 0.65rem;
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       opacity: 0;
       transition: 0.3s;
-      background: rgba(252, 243, 212, 0.9);
+      background: rgba(255, 248, 220, 0.9);
       padding: 0.15rem 0.8rem;
       border-radius: 30px;
       border: 1px solid var(--dourado-claro);
@@ -1051,7 +1122,6 @@
       opacity: 1;
     }
 
-    /* BOTÃO DE MENSAGEM SURPRESA */
     .surpresa-btn {
       display: inline-block;
       background: var(--dourado);
@@ -1059,22 +1129,21 @@
       border: 2px solid var(--dourado-escuro);
       padding: 0.8rem 2rem;
       border-radius: 60px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1.1rem;
       cursor: pointer;
       transition: 0.3s;
-      box-shadow: 0 4px 15px rgba(194, 154, 59, 0.4);
+      box-shadow: 0 4px 15px rgba(212, 160, 23, 0.4);
       margin: 1rem 0;
     }
 
     .surpresa-btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 30px rgba(194, 154, 59, 0.5);
-      background: var(--dourado-claro);
+      box-shadow: 0 8px 30px rgba(212, 160, 23, 0.5);
+      background: var(--amarelo-queimado);
       color: #2e2416;
     }
 
-    /* modal de mensagem surpresa */
     .modal-msg {
       display: none;
       position: fixed;
@@ -1094,12 +1163,12 @@
     }
 
     .modal-content {
-      background: #fef9e7;
+      background: #fffbe6;
       max-width: 500px;
       padding: 2.5rem 2.5rem 2rem;
       border-radius: 60px 16px 60px 16px;
       border: 4px solid var(--dourado);
-      box-shadow: 0 20px 60px rgba(194, 154, 59, 0.4);
+      box-shadow: 0 20px 60px rgba(212, 160, 23, 0.4);
       text-align: center;
       position: relative;
       animation: popIn 0.4s ease;
@@ -1116,7 +1185,7 @@
       right: 20px;
       font-size: 2rem;
       cursor: pointer;
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       transition: 0.2s;
       background: none;
       border: none;
@@ -1124,12 +1193,12 @@
 
     .modal-content .modal-close:hover {
       transform: rotate(90deg);
-      color: var(--dourado-escuro);
+      color: var(--dourado);
     }
 
     .modal-content .modal-icon {
       font-size: 4rem;
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       margin-bottom: 0.5rem;
     }
 
@@ -1153,9 +1222,8 @@
       font-weight: 500;
     }
 
-    /* citação */
     .quote-block {
-      background: var(--amarelo-pastel);
+      background: #FFF8DC;
       padding: 2rem 2.5rem;
       border-radius: 80px 16px 80px 16px;
       margin: 2.5rem 0;
@@ -1168,11 +1236,11 @@
 
     .quote-block:hover {
       transform: scale(1.01);
-      box-shadow: 0 16px 32px rgba(194, 154, 59, 0.2);
+      box-shadow: 0 16px 32px rgba(212, 160, 23, 0.2);
     }
 
     .quote-block i {
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       font-size: 2.5rem;
       margin-right: 10px;
       opacity: 0.8;
@@ -1190,7 +1258,7 @@
 
     .quote-block blockquote span {
       font-weight: 500;
-      color: var(--dourado);
+      color: var(--dourado-escuro);
     }
 
     .quote-block .autor {
@@ -1206,7 +1274,7 @@
       bottom: -12px;
       right: 30px;
       background: #2e2416;
-      color: #fef9e7;
+      color: #fffbe6;
       padding: 0.3rem 1.2rem;
       border-radius: 40px;
       font-size: 0.8rem;
@@ -1221,14 +1289,13 @@
       transform: translateY(0);
     }
 
-    /* recursos */
     .recursos {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       gap: 1.5rem;
-      background: #fffcf0;
+      background: #FFFDF5;
       padding: 1.8rem 2.5rem;
       border-radius: 60px 12px 60px 12px;
       border: 2px solid var(--dourado);
@@ -1238,7 +1305,7 @@
 
     .recursos .info h4 {
       font-size: 1.4rem;
-      font-weight: 500;
+      font-weight: 600;
       color: #2e2416;
     }
 
@@ -1256,7 +1323,7 @@
       color: #2e2416;
       cursor: pointer;
       transition: 0.2s;
-      box-shadow: 0 4px 8px rgba(194, 154, 59, 0.2);
+      box-shadow: 0 4px 8px rgba(212, 160, 23, 0.2);
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -1269,7 +1336,6 @@
       transform: scale(1.02);
     }
 
-    /* rodapé com autoria */
     .footer {
       margin-top: 4rem;
       padding: 1.8rem 0.5rem 0.8rem;
@@ -1295,17 +1361,17 @@
     }
 
     .footer .autoria {
-      background: rgba(194, 154, 59, 0.12);
+      background: rgba(212, 160, 23, 0.12);
       padding: 0.3rem 1.2rem;
       border-radius: 40px;
       border: 2px solid var(--dourado);
       font-size: 0.85rem;
       font-weight: 500;
-      color: var(--dourado);
+      color: var(--dourado-escuro);
     }
 
     .footer .autoria i {
-      color: var(--dourado);
+      color: var(--dourado-escuro);
       margin-right: 6px;
     }
 
@@ -1320,8 +1386,8 @@
       border: 1px solid var(--dourado-escuro);
     }
 
-    .laco-amarelo { color: var(--dourado); }
-    .sol-icon { color: var(--dourado); }
+    .laco-amarelo { color: var(--dourado-escuro); }
+    .sol-icon { color: var(--dourado-escuro); }
 
     @media (max-width: 650px) {
       .header h1 { font-size: 2.3rem; }
@@ -1345,7 +1411,6 @@
 </head>
 <body>
   <div class="container">
-    <!-- cabeçalho -->
     <header class="header">
       <h1>
         <i class="fas fa-school"></i> 
@@ -1354,7 +1419,6 @@
       <p><i class="fas fa-phone-volume" style="margin-right: 10px;"></i> Apoio, pesquisas e números que salvam vidas</p>
     </header>
 
-    <!-- BANNER SETEMBRO AMARELO -->
     <div class="setembro-banner">
       <div class="laco">
         <i class="fas fa-ribbon"></i>
@@ -1370,7 +1434,6 @@
       <div class="banner-hidden-msg">💛 "Você é mais forte do que imagina. Peça ajuda."</div>
     </div>
 
-    <!-- SEÇÃO DE MENSAGENS DE APOIO -->
     <section class="mensagens-apoio">
       <div class="apoio-header">
         <div class="apoio-icon">
@@ -1378,14 +1441,13 @@
         </div>
         <div>
           <h2>Mensagens de <span>Apoio</span></h2>
-          <div class="alunos-sub" style="margin-bottom: 0; border: 2px dashed var(--dourado); background: rgba(194,154,59,0.08); padding: 0.3rem 1.2rem; border-radius: 40px; display: inline-block; font-weight: 500; font-size: 0.95rem;">
-            <i class="fas fa-star" style="color: var(--dourado);"></i> Para adultos e alunos
+          <div class="alunos-sub" style="margin-bottom: 0; border: 2px dashed var(--dourado); background: rgba(212,160,23,0.08); padding: 0.3rem 1.2rem; border-radius: 40px; display: inline-block; font-weight: 500; font-size: 0.95rem;">
+            <i class="fas fa-star" style="color: var(--dourado-escuro);"></i> Para adultos e alunos
           </div>
         </div>
       </div>
 
       <div class="apoio-grid">
-        <!-- Mensagens para Alunos -->
         <div class="grupo-msg">
           <span class="grupo-tag"><i class="fas fa-graduation-cap"></i> Alunos</span>
           <h3><i class="fas fa-lightbulb"></i> Para você que está na escola</h3>
@@ -1398,7 +1460,6 @@
           </ul>
         </div>
 
-        <!-- Mensagens para Adultos -->
         <div class="grupo-msg">
           <span class="grupo-tag"><i class="fas fa-users"></i> Adultos</span>
           <h3><i class="fas fa-heart"></i> Para pais, professores e educadores</h3>
@@ -1413,7 +1474,6 @@
       </div>
     </section>
 
-    <!-- SEÇÃO ESPECIAL ALUNOS ENSINO MÉDIO -->
     <section class="alunos-section">
       <div class="alunos-header">
         <div class="alunos-icon">
@@ -1421,12 +1481,11 @@
         </div>
         <div>
           <h2>Saúde Mental no <span>Ensino Médio</span></h2>
-          <div class="alunos-sub"><i class="fas fa-star" style="color: var(--dourado);"></i> Foco especial no 1º e 3º ano</div>
+          <div class="alunos-sub"><i class="fas fa-star" style="color: var(--dourado-escuro);"></i> Foco especial no 1º e 3º ano</div>
         </div>
       </div>
 
       <div class="alunos-grid">
-        <!-- 1º Ano -->
         <div class="ano-card">
           <span class="ano-tag">1º Ano</span>
           <h3><i class="fas fa-rocket"></i> Adaptação e Novos Começos</h3>
@@ -1438,7 +1497,6 @@
           </ul>
         </div>
 
-        <!-- 3º Ano -->
         <div class="ano-card">
           <span class="ano-tag">3º Ano</span>
           <h3><i class="fas fa-hourglass-half"></i> Pressão e Despedidas</h3>
@@ -1452,7 +1510,7 @@
       </div>
 
       <div class="alunos-dicas">
-        <h4><i class="fas fa-lightbulb" style="color: var(--dourado);"></i> Dicas para todos os alunos</h4>
+        <h4><i class="fas fa-lightbulb" style="color: var(--dourado-escuro);"></i> Dicas para todos os alunos</h4>
         <p>💛 A saúde mental não é um luxo, é uma necessidade. Cuidar da mente é tão importante quanto estudar para as provas.</p>
         <div class="dicas-tags">
           <span>🧘 Respire fundo</span>
@@ -1469,7 +1527,6 @@
       </div>
     </section>
 
-    <!-- SEÇÃO MIKE EMME -->
     <section class="mike-section">
       <div class="mike-header">
         <div class="mike-icon">
@@ -1477,39 +1534,70 @@
         </div>
         <div>
           <h2>Mike Emme <span>💛</span></h2>
-          <div class="mike-sub"><i class="fas fa-star" style="color: var(--dourado);"></i> A história que inspirou o Setembro Amarelo</div>
+          <div class="mike-sub"><i class="fas fa-star" style="color: var(--dourado-escuro);"></i> A história que deu origem ao Setembro Amarelo</div>
+        </div>
+      </div>
+
+      <div class="mike-historia">
+        <h3><i class="fas fa-car" style="color: var(--dourado-escuro);"></i> Como começou o movimento?</h3>
+        <p><strong>Mike Emme</strong> era um jovem de 17 anos, apaixonado por carros e mecânica. Em 1994, ele restaurou um Ford Mustang 1968 e o pintou de amarelo vibrante. Ficou conhecido como <strong>"Mustang Mike"</strong> entre seus amigos.</p>
+        
+        <p>Infelizmente, em 8 de setembro de 1994, Mike faleceu por suicídio. Sua morte chocou a comunidade e deixou sua família devastada.</p>
+        
+        <div class="destaque-historia">
+          <i class="fas fa-heart" style="color: var(--dourado-escuro);"></i> 
+          <strong>O legado de Mike:</strong> Seus pais, Dale e Darlene Emme, transformaram a dor em ação. No funeral, distribuíram cartões com fitas amarelas e a mensagem: 
+          <em>"Se você precisar, peça ajuda"</em>. Esse gesto simples, mas poderoso, deu origem ao <strong>Yellow Ribbon Suicide Prevention Program</strong>.
+        </div>
+
+        <p>O movimento se espalhou pelos Estados Unidos e pelo mundo. Em 2003, a Organização Mundial da Saúde (OMS) criou o <strong>Dia Mundial de Prevenção ao Suicídio</strong>, celebrado em 10 de setembro.</p>
+
+        <p><strong>No Brasil:</strong> Em 2015, a Associação Brasileira de Psiquiatria (ABP), o Conselho Federal de Medicina (CFM) e o Centro de Valorização da Vida (CVV) trouxeram a campanha ao Brasil, criando o <strong>Setembro Amarelo</strong>.</p>
+
+        <div class="destaque-historia" style="background: rgba(255, 215, 0, 0.1); border-left-color: var(--amarelo-queimado);">
+          <i class="fas fa-ribbon" style="color: var(--dourado-escuro);"></i>
+          <strong>A importância de Mike Emme:</strong> Sua história nos lembra que <strong>falar sobre saúde mental pode salvar vidas</strong>. O amarelo do Mustang se tornou símbolo de esperança e prevenção no mundo inteiro.
         </div>
       </div>
 
       <div class="mike-grid">
         <div class="mike-card">
-          <h4><i class="fas fa-car" style="color: var(--dourado);"></i> O Mustang Amarelo</h4>
-          <p>Em 1994, Mike Emme, um jovem de 17 anos apaixonado por mecânica, restaurou um Ford Mustang 1968 e o pintou de amarelo. Ficou conhecido como "Mustang Mike" entre seus amigos.</p>
+          <h4><i class="fas fa-car" style="color: var(--dourado-escuro);"></i> O Mustang Amarelo</h4>
+          <p>Mike restaurou um Ford Mustang 1968 e o pintou de amarelo, que se tornou o símbolo da campanha mundial de prevenção ao suicídio.</p>
         </div>
         <div class="mike-card">
-          <h4><i class="fas fa-heart" style="color: var(--dourado);"></i> O Legado</h4>
-          <p>Após sua morte, seus pais Dale e Darlene Emme distribuíram cartões com fitas amarelas e a mensagem "Se você precisar, peça ajuda". O gesto deu origem ao Yellow Ribbon Suicide Prevention Program.</p>
+          <h4><i class="fas fa-heart" style="color: var(--dourado-escuro);"></i> O Legado</h4>
+          <p>Os cartões com fitas amarelas distribuídos pelos pais de Mike deram origem ao Yellow Ribbon Suicide Prevention Program.</p>
         </div>
         <div class="mike-card">
-          <h4><i class="fas fa-globe-americas" style="color: var(--dourado);"></i> Impacto Global</h4>
-          <p>O movimento se espalhou pelos Estados Unidos e pelo mundo. Em 2003, a OMS criou o Dia Mundial de Prevenção ao Suicídio (10 de setembro).</p>
+          <h4><i class="fas fa-globe-americas" style="color: var(--dourado-escuro);"></i> Impacto Global</h4>
+          <p>O movimento se espalhou pelos Estados Unidos e pelo mundo. O Yellow Ribbon Program já salvou milhares de vidas.</p>
         </div>
         <div class="mike-card">
-          <h4><i class="fas fa-flag" style="color: var(--dourado);"></i> No Brasil</h4>
-          <p>Em 2015, a ABP (Associação Brasileira de Psiquiatria), o CFM e o CVV trouxeram a campanha ao Brasil, criando o Setembro Amarelo.</p>
+          <h4><i class="fas fa-flag" style="color: var(--dourado-escuro);"></i> No Brasil</h4>
+          <p>Em 2015, a ABP, o CFM e o CVV trouxeram a campanha ao Brasil, criando o Setembro Amarelo.</p>
         </div>
+      </div>
+
+      <div class="mike-links">
+        <h4><i class="fas fa-link" style="color: var(--dourado-escuro);"></i> Saiba mais sobre a história de Mike Emme</h4>
+        <ul>
+          <li><a href="https://g1.globo.com/saude/saude-mental/noticia/2024/09/10/setembro-amarelo-pais-de-jovem-que-deu-origem-a-campanha-contam-que-dor-nao-tem-fim-e-alertam-se-precisar-peca-ajuda.ghtml" target="_blank" rel="noopener noreferrer">Entrevista com os pais de Mike Emme - G1</a></li>
+          <li><a href="https://yellowribbon.org/" target="_blank" rel="noopener noreferrer">Site oficial do Yellow Ribbon Suicide Prevention Program</a></li>
+          <li><a href="https://www.setembroamarelo.com.br/" target="_blank" rel="noopener noreferrer">Setembro Amarelo Brasil - Site oficial</a></li>
+          <li><a href="https://www.abp.org.br/" target="_blank" rel="noopener noreferrer">Associação Brasileira de Psiquiatria (ABP)</a></li>
+        </ul>
       </div>
 
       <div class="mike-legado">
         <i class="fas fa-quote-left"></i> 
         "O amarelo do Mustang de Mike se tornou símbolo de esperança e prevenção no mundo inteiro. Sua história nos lembra que falar sobre saúde mental pode salvar vidas."
-        <div style="margin-top: 0.5rem; font-style: normal; font-weight: 500; font-size: 0.9rem; color: var(--dourado);">
+        <div style="margin-top: 0.5rem; font-style: normal; font-weight: 500; font-size: 0.9rem; color: var(--dourado-escuro);">
           — Legado de Mike Emme, 1994
         </div>
       </div>
     </section>
 
-    <!-- cartões principais -->
     <div class="cards-grid">
       <div class="card">
         <i class="fas fa-heart-circle-check"></i>
@@ -1531,7 +1619,6 @@
       </div>
     </div>
 
-    <!-- SEÇÃO NÚMEROS DE EMERGÊNCIA -->
     <section class="emergencia-section">
       <h2><i class="fas fa-phone"></i> Números de apoio 24h <span style="font-size: 1.2rem; margin-left: 8px;"><i class="fas fa-ribbon laco-amarelo"></i></span></h2>
       <div class="emergencia-grid">
@@ -1556,7 +1643,7 @@
         <div class="numero-card">
           <div class="num">100</div>
           <div class="desc">Disque Direitos Humanos</div>
-          <div class="small-desc">Denúncias e orientação (violações)</div>
+          <div class="small-desc">Denúncias e orientação sobre violações</div>
           <div class="num-hidden-msg">⚖️ Seus direitos importam</div>
         </div>
       </div>
@@ -1565,7 +1652,6 @@
       </p>
     </section>
 
-    <!-- SEÇÃO ONGs -->
     <section class="ongs-section">
       <h2><i class="fas fa-hand-holding-heart"></i> ONGs de apoio à saúde mental <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px; font-size: 1.8rem;"></i></h2>
       <div class="ongs-grid">
@@ -1576,34 +1662,6 @@
           <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
           <div class="ong-hidden-msg">💛 "Sua vida tem valor"</div>
         </a>
-        <a href="https://www.associacaovitale.com.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-people-arrows"></i></div>
-          <h3>Vitalle</h3>
-          <div class="ong-desc">Associação de apoio a pessoas com transtornos mentais e seus familiares.</div>
-          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">🤗 "Família que acolhe"</div>
-        </a>
-        <a href="https://www.abraco.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-ribbon"></i></div>
-          <h3>ABRACO</h3>
-          <div class="ong-desc">Associação Brasileira de Familiares, Amigos e Portadores de Transtornos Mentais.</div>
-          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">💪 "Juntos somos mais fortes"</div>
-        </a>
-        <a href="https://www.instagram.com/mapamentaloficial/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-brain"></i></div>
-          <h3>Mapa Mental</h3>
-          <div class="ong-desc">Projeto de conscientização e acolhimento em saúde mental para jovens.</div>
-          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">🧠 "Sua mente importa"</div>
-        </a>
-        <a href="https://www.setor.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-hand-sparkles"></i></div>
-          <h3>SETOR</h3>
-          <div class="ong-desc">Serviço de apoio terapêutico e reinserção social para pessoas em sofrimento psíquico.</div>
-          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">🌟 "Recomeço é possível"</div>
-        </a>
         <a href="https://www.saudemental.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
           <div class="ong-icon"><i class="fas fa-globe-americas"></i></div>
           <h3>Instituto Saúde Mental</h3>
@@ -1611,44 +1669,55 @@
           <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
           <div class="ong-hidden-msg">🌍 "Saúde mental é direito de todos"</div>
         </a>
+        <a href="https://www.setembroamarelo.com.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-ribbon"></i></div>
+          <h3>Setembro Amarelo Brasil</h3>
+          <div class="ong-desc">Campanha oficial de prevenção ao suicídio no Brasil.</div>
+          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+          <div class="ong-hidden-msg">💛 "Falar é a melhor solução"</div>
+        </a>
+        <a href="https://www.instagram.com/saudementalefacil/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-hand-sparkles"></i></div>
+          <h3>Saúde Mental Fácil</h3>
+          <div class="ong-desc">Projeto de educação e conscientização sobre saúde mental para jovens.</div>
+          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+          <div class="ong-hidden-msg">🌟 "Informação é cuidado"</div>
+        </a>
+        <a href="https://www.instagram.com/psicologianapratica/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-brain"></i></div>
+          <h3>Psicologia na Prática</h3>
+          <div class="ong-desc">Conteúdo educativo sobre saúde mental e bem-estar emocional.</div>
+          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+          <div class="ong-hidden-msg">🧠 "Conhecimento que transforma"</div>
+        </a>
+        <a href="https://www.instagram.com/psicologiacompassiva/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-heart"></i></div>
+          <h3>Psicologia Compassiva</h3>
+          <div class="ong-desc">Acolhimento e orientação em saúde mental para jovens e adultos.</div>
+          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+          <div class="ong-hidden-msg">💛 "Compaixão que cura"</div>
+        </a>
       </div>
     </section>
 
-    <!-- SEÇÃO DE PESQUISAS -->
     <section class="pesquisas-section">
       <h2><i class="fas fa-microscope"></i> Pesquisas em destaque <i class="fas fa-sun sol-icon" style="margin-left: 8px; font-size: 1.8rem;"></i></h2>
       <div class="pesquisas-grid">
         <a href="https://www.who.int/news-room/fact-sheets/detail/mental-disorders" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
           <div class="icone-pesq"><i class="fas fa-globe-americas"></i></div>
           <h3>OMS · Transtornos mentais</h3>
-          <span class="fonte"><i class="far fa-file-alt"></i> World Health Organization</span>
+          <span class="fonte"><i class="far fa-file-alt"></i> Organização Mundial da Saúde</span>
           <p>Dados globais sobre prevalência de depressão, ansiedade e impacto na saúde pública.</p>
           <span class="seta">Acessar pesquisa →</span>
           <div class="pesquisa-hidden-msg">📊 "Conhecimento salva vidas"</div>
         </a>
-        <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02143-7/fulltext" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
-          <div class="icone-pesq"><i class="fas fa-newspaper"></i></div>
-          <h3>The Lancet · COVID-19</h3>
-          <span class="fonte"><i class="far fa-file-alt"></i> The Lancet Psychiatry</span>
-          <p>Aumento de transtornos mentais durante a pandemia e estratégias de resposta.</p>
+        <a href="https://www.revistas.usp.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+          <div class="icone-pesq"><i class="fas fa-university"></i></div>
+          <h3>USP · Saúde mental juvenil</h3>
+          <span class="fonte"><i class="far fa-file-alt"></i> Universidade de São Paulo</span>
+          <p>Pesquisas sobre ansiedade e depressão entre adolescentes brasileiros.</p>
           <span class="seta">Acessar pesquisa →</span>
-          <div class="pesquisa-hidden-msg">🦠 "Resiliência em tempos difíceis"</div>
-        </a>
-        <a href="https://www.apa.org/monitor/2022/01/specialized-care-mental-health" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
-          <div class="icone-pesq"><i class="fas fa-user-md"></i></div>
-          <h3>APA · Acesso ao cuidado</h3>
-          <span class="fonte"><i class="far fa-file-alt"></i> American Psychological Association</span>
-          <p>Barreiras e avanços no acesso a tratamentos de saúde mental.</p>
-          <span class="seta">Acessar pesquisa →</span>
-          <div class="pesquisa-hidden-msg">🏥 "Cuidado acessível para todos"</div>
-        </a>
-        <a href="https://www.nimh.nih.gov/health/statistics/mental-illness" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
-          <div class="icone-pesq"><i class="fas fa-database"></i></div>
-          <h3>NIMH · Estatísticas</h3>
-          <span class="fonte"><i class="far fa-file-alt"></i> National Institute of Mental Health</span>
-          <p>Dados atualizados sobre prevalência de doenças mentais e tratamentos.</p>
-          <span class="seta">Acessar pesquisa →</span>
-          <div class="pesquisa-hidden-msg">📈 "Dados que transformam"</div>
+          <div class="pesquisa-hidden-msg">🧑‍🎓 "Juventude e saúde mental"</div>
         </a>
         <a href="https://portal.fiocruz.br/noticia/saude-mental-e-importante-para-o-bem-estar-dos-trabalhadores" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
           <div class="icone-pesq"><i class="fas fa-brazil"></i></div>
@@ -1658,43 +1727,56 @@
           <span class="seta">Acessar pesquisa →</span>
           <div class="pesquisa-hidden-msg">👷 "Trabalho com saúde mental"</div>
         </a>
-        <a href="https://www.jornal.usp.br/ciencias/ciencias-da-saude/estudo-da-usp-aponta-aumento-de-transtornos-mentais-entre-jovens/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
-          <div class="icone-pesq"><i class="fas fa-university"></i></div>
-          <h3>USP · Jovens e ansiedade</h3>
-          <span class="fonte"><i class="far fa-file-alt"></i> Universidade de São Paulo</span>
-          <p>Aumento expressivo de ansiedade e depressão entre adolescentes brasileiros.</p>
+        <a href="https://www.scielo.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+          <div class="icone-pesq"><i class="fas fa-book-open"></i></div>
+          <h3>SciELO · Saúde mental Brasil</h3>
+          <span class="fonte"><i class="far fa-file-alt"></i> Scientific Electronic Library Online</span>
+          <p>Artigos científicos sobre saúde mental, depressão e ansiedade no Brasil.</p>
           <span class="seta">Acessar pesquisa →</span>
-          <div class="pesquisa-hidden-msg">🧑‍🎓 "Juventude e saúde mental"</div>
+          <div class="pesquisa-hidden-msg">📚 "Ciência brasileira"</div>
+        </a>
+        <a href="https://www.abp.org.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+          <div class="icone-pesq"><i class="fas fa-psychiatry"></i></div>
+          <h3>ABP · Diretrizes brasileiras</h3>
+          <span class="fonte"><i class="far fa-file-alt"></i> Associação Brasileira de Psiquiatria</span>
+          <p>Diretrizes e pesquisas sobre tratamento de transtornos mentais no Brasil.</p>
+          <span class="seta">Acessar pesquisa →</span>
+          <div class="pesquisa-hidden-msg">🧠 "Referência nacional"</div>
+        </a>
+        <a href="https://www.revista.ufpe.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+          <div class="icone-pesq"><i class="fas fa-graduation-cap"></i></div>
+          <h3>UFPE · Ansiedade escolar</h3>
+          <span class="fonte"><i class="far fa-file-alt"></i> Universidade Federal de Pernambuco</span>
+          <p>Estudos sobre ansiedade e desempenho escolar em adolescentes brasileiros.</p>
+          <span class="seta">Acessar pesquisa →</span>
+          <div class="pesquisa-hidden-msg">📖 "Pesquisa acadêmica"</div>
         </a>
       </div>
       <p style="margin-top: 1.8rem; font-size: 0.95rem; color: #2e2416; text-align: center; background: rgba(255,248,220,0.5); padding: 0.6rem; border-radius: 60px; border: 2px dashed var(--dourado);">
-        <i class="fas fa-hand-pointer" style="color: var(--dourado);"></i> Clique em qualquer balão para ler a pesquisa na íntegra (site oficial)
+        <i class="fas fa-hand-pointer" style="color: var(--dourado-escuro);"></i> Clique em qualquer balão para acessar as pesquisas
       </p>
     </section>
 
-    <!-- citação OMS -->
     <div class="quote-block">
       <blockquote>
         <i class="fas fa-quote-left"></i> 
-        “A saúde mental é um estado de bem-estar no qual o indivíduo percebe as suas próprias capacidades, pode lidar com o estresse da vida, trabalhar de forma produtiva e contribuir para a sua comunidade.”
+        "A saúde mental é um estado de bem-estar no qual o indivíduo percebe as suas próprias capacidades, pode lidar com o estresse da vida, trabalhar de forma produtiva e contribuir para a sua comunidade."
         <span>— OMS</span>
       </blockquote>
-      <div class="autor"><i class="fas fa-angles-right" style="color: var(--dourado);"></i> Organização Mundial da Saúde <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px;"></i></div>
+      <div class="autor"><i class="fas fa-angles-right" style="color: var(--dourado-escuro);"></i> Organização Mundial da Saúde <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px;"></i></div>
       <div class="quote-hidden-msg">🌻 "Você tem um propósito único."</div>
     </div>
 
-    <!-- Botão de mensagem surpresa -->
     <div style="display: flex; justify-content: center; margin: 1rem 0 0.5rem;">
       <button class="surpresa-btn" id="surpresaBtn">
         <i class="fas fa-star" style="margin-right: 8px;"></i> Clique para uma mensagem especial
       </button>
     </div>
 
-    <!-- recursos / apoio -->
     <div class="recursos">
       <div class="info">
-        <h4><i class="fas fa-phone-volume" style="color: var(--dourado); margin-right: 8px;"></i> Apoio disponível <i class="fas fa-ribbon laco-amarelo" style="margin-left: 6px;"></i></h4>
-        <p><i class="fas fa-circle" style="color: var(--dourado); font-size: 0.6rem; vertical-align: middle;"></i> Ligue para o CVV: 188 (24h) · chat online</p>
+        <h4><i class="fas fa-phone-volume" style="color: var(--dourado-escuro); margin-right: 8px;"></i> Apoio disponível <i class="fas fa-ribbon laco-amarelo" style="margin-left: 6px;"></i></h4>
+        <p><i class="fas fa-circle" style="color: var(--dourado-escuro); font-size: 0.6rem; vertical-align: middle;"></i> Ligue para o CVV: 188 (24h) · chat online</p>
         <p style="font-size: 0.9rem; opacity: 0.8;"><i class="fas fa-clock"></i> Atendimento gratuito e sigiloso</p>
       </div>
       <div class="btn" id="apoioBtn">
@@ -1702,12 +1784,11 @@
       </div>
     </div>
 
-    <!-- rodapé com autoria -->
     <footer class="footer">
       <div class="simbolo">
-        <i class="fas fa-circle" style="color: var(--dourado);"></i>
-        <i class="fas fa-circle" style="color: #fcf3d4; text-shadow: 0 0 0 var(--dourado);"></i>
-        <i class="fas fa-circle" style="color: var(--dourado);"></i>
+        <i class="fas fa-circle" style="color: var(--dourado-escuro);"></i>
+        <i class="fas fa-circle" style="color: #FFF8DC; text-shadow: 0 0 0 var(--dourado-escuro);"></i>
+        <i class="fas fa-circle" style="color: var(--dourado-escuro);"></i>
         <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px;"></i>
       </div>
       <div>
@@ -1719,7 +1800,6 @@
     </footer>
   </div>
 
-  <!-- MODAL de mensagem surpresa -->
   <div class="modal-msg" id="modalMsg">
     <div class="modal-content">
       <button class="modal-close" id="modalClose">✕</button>
@@ -1731,7 +1811,6 @@
   </div>
 
   <script>
-    // Array de mensagens motivacionais para o modal
     const mensagens = [
       "A vida é feita de recomeços. Cada dia é uma nova oportunidade para ser gentil consigo mesmo.",
       "Você é mais forte do que imagina. Acredite na sua capacidade de superar.",
@@ -1745,18 +1824,14 @@
       "Você é uma obra em construção, e cada cicatriz conta uma história de superação."
     ];
 
-    // Botão surpresa
     document.getElementById('surpresaBtn').addEventListener('click', function() {
       const modal = document.getElementById('modalMsg');
       const fraseEl = document.getElementById('fraseModal');
-      
       const randomIndex = Math.floor(Math.random() * mensagens.length);
       fraseEl.textContent = '"' + mensagens[randomIndex] + '"';
-      
       modal.classList.add('active');
     });
 
-    // Fechar modal
     document.getElementById('modalClose').addEventListener('click', function() {
       document.getElementById('modalMsg').classList.remove('active');
     });
@@ -1773,6 +1848,12 @@
       const mensagemApoio = "Você é importante. Ligue 188 ou converse com alguém. A ajuda está a um clique de distância.";
       fraseEl.textContent = '"' + mensagemApoio + '"';
       modal.classList.add('active');
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('modalMsg').classList.remove('active');
+      }
     });
   </script>
 </body>

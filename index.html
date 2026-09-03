@@ -1336,6 +1336,61 @@
       transform: scale(1.02);
     }
 
+    .frase-motivacional {
+      background: linear-gradient(135deg, #FFF8DC, #FFFDE7);
+      padding: 2.5rem 2rem;
+      border-radius: 60px 16px 60px 16px;
+      margin: 3rem 0 2rem;
+      border: 3px solid var(--dourado);
+      box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .frase-motivacional .icone-fundo {
+      font-size: 4rem;
+      opacity: 0.06;
+      position: absolute;
+      right: 20px;
+      bottom: 0;
+      transform: rotate(-10deg);
+    }
+
+    .frase-motivacional .emoji-grande {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .frase-motivacional .frase-texto {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2e2416;
+      line-height: 1.5;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .frase-motivacional .frase-texto .destaque-dourado {
+      color: var(--dourado-escuro);
+    }
+
+    .frase-motivacional .selo {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+      color: #2e2416;
+      background: rgba(212, 160, 23, 0.12);
+      display: inline-block;
+      padding: 0.4rem 2rem;
+      border-radius: 40px;
+      border: 2px solid var(--dourado);
+      font-weight: 500;
+    }
+
+    .frase-motivacional .selo i {
+      color: var(--dourado-escuro);
+    }
+
     .footer {
       margin-top: 4rem;
       padding: 1.8rem 0.5rem 0.8rem;
@@ -1362,12 +1417,15 @@
 
     .footer .autoria {
       background: rgba(212, 160, 23, 0.12);
-      padding: 0.3rem 1.2rem;
+      padding: 0.6rem 1.8rem;
       border-radius: 40px;
       border: 2px solid var(--dourado);
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 500;
       color: var(--dourado-escuro);
+      text-align: center;
+      line-height: 1.8;
+      max-width: 600px;
     }
 
     .footer .autoria i {
@@ -1403,7 +1461,8 @@
       .modal-content { margin: 1rem; padding: 1.8rem; }
       .alunos-section, .mensagens-apoio { padding: 1.5rem; }
       .alunos-section .alunos-grid .ano-card { padding: 1.2rem; }
-      .footer .autoria { font-size: 0.75rem; padding: 0.2rem 0.8rem; }
+      .footer .autoria { font-size: 0.75rem; padding: 0.4rem 1rem; line-height: 1.6; }
+      .frase-motivacional .frase-texto { font-size: 1.3rem; }
     }
 
     html { scroll-behavior: smooth; }
@@ -1601,7 +1660,7 @@
     <div class="cards-grid">
       <div class="card">
         <i class="fas fa-heart-circle-check"></i>
-        <h3>Autocuidado</h3>
+        <h3>🧘 Autocuidado</h3>
         <p>Pequenas pausas, respiração consciente e momentos de silêncio ajudam a restaurar o equilíbrio emocional.</p>
         <div class="card-hidden-msg">✨ "Cuide de você primeiro."</div>
       </div>
@@ -1657,45 +1716,45 @@
       <div class="ongs-grid">
         <a href="https://www.cvv.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
           <div class="ong-icon"><i class="fas fa-phone-alt"></i></div>
-          <h3>CVV</h3>
+          <h3>💛 CVV</h3>
           <div class="ong-desc">Centro de Valorização da Vida – apoio emocional e prevenção ao suicídio.</div>
           <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
           <div class="ong-hidden-msg">💛 "Sua vida tem valor"</div>
         </a>
-        <a href="https://www.saudemental.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-globe-americas"></i></div>
-          <h3>Instituto Saúde Mental</h3>
-          <div class="ong-desc">Promoção de saúde mental, pesquisa e combate ao estigma.</div>
+        <a href="https://www.abrata.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-hands-helping"></i></div>
+          <h3>🤗 ABRATA</h3>
+          <div class="ong-desc">Associação Brasileira de Familiares de Pessoas com Transtornos Mentais – acolhimento e orientação.</div>
           <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">🌍 "Saúde mental é direito de todos"</div>
+          <div class="ong-hidden-msg">🤗 "Família que acolhe"</div>
         </a>
         <a href="https://www.setembroamarelo.com.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
           <div class="ong-icon"><i class="fas fa-ribbon"></i></div>
-          <h3>Setembro Amarelo Brasil</h3>
+          <h3>💛 Setembro Amarelo Brasil</h3>
           <div class="ong-desc">Campanha oficial de prevenção ao suicídio no Brasil.</div>
           <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
           <div class="ong-hidden-msg">💛 "Falar é a melhor solução"</div>
         </a>
-        <a href="https://www.instagram.com/saudementalefacil/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-hand-sparkles"></i></div>
-          <h3>Saúde Mental Fácil</h3>
-          <div class="ong-desc">Projeto de educação e conscientização sobre saúde mental para jovens.</div>
+        <a href="https://www.mapeamentosaudemental.com.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-map-signs"></i></div>
+          <h3>📍 Mapeamento Saúde Mental</h3>
+          <div class="ong-desc">Plataforma para encontrar psicólogos e serviços de saúde mental próximos a você.</div>
           <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">🌟 "Informação é cuidado"</div>
+          <div class="ong-hidden-msg">📍 "Encontre ajuda perto de você"</div>
         </a>
-        <a href="https://www.instagram.com/psicologianapratica/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-brain"></i></div>
-          <h3>Psicologia na Prática</h3>
-          <div class="ong-desc">Conteúdo educativo sobre saúde mental e bem-estar emocional.</div>
+        <a href="https://casadeapoio.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-home-heart"></i></div>
+          <h3>🏠 Casa de Apoio Viver</h3>
+          <div class="ong-desc">Projeto de acolhimento e reinserção social para pessoas em sofrimento psíquico.</div>
           <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">🧠 "Conhecimento que transforma"</div>
+          <div class="ong-hidden-msg">🏠 "Um recomeço possível"</div>
         </a>
-        <a href="https://www.instagram.com/psicologiacompassiva/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-heart"></i></div>
-          <h3>Psicologia Compassiva</h3>
-          <div class="ong-desc">Acolhimento e orientação em saúde mental para jovens e adultos.</div>
+        <a href="https://projetoanima.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-seedling"></i></div>
+          <h3>🌱 Projeto Ânima</h3>
+          <div class="ong-desc">Saúde mental para jovens com rodas de conversa, terapia comunitária e suporte emocional.</div>
           <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">💛 "Compaixão que cura"</div>
+          <div class="ong-hidden-msg">🌱 "Cuidando da sua mente"</div>
         </a>
       </div>
     </section>
@@ -1705,7 +1764,7 @@
       <div class="pesquisas-grid">
         <a href="https://www.who.int/news-room/fact-sheets/detail/mental-disorders" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
           <div class="icone-pesq"><i class="fas fa-globe-americas"></i></div>
-          <h3>OMS · Transtornos mentais</h3>
+          <h3>🌍 OMS · Transtornos mentais</h3>
           <span class="fonte"><i class="far fa-file-alt"></i> Organização Mundial da Saúde</span>
           <p>Dados globais sobre prevalência de depressão, ansiedade e impacto na saúde pública.</p>
           <span class="seta">Acessar pesquisa →</span>
@@ -1713,7 +1772,7 @@
         </a>
         <a href="https://www.revistas.usp.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
           <div class="icone-pesq"><i class="fas fa-university"></i></div>
-          <h3>USP · Saúde mental juvenil</h3>
+          <h3>🎓 USP · Saúde mental juvenil</h3>
           <span class="fonte"><i class="far fa-file-alt"></i> Universidade de São Paulo</span>
           <p>Pesquisas sobre ansiedade e depressão entre adolescentes brasileiros.</p>
           <span class="seta">Acessar pesquisa →</span>
@@ -1721,7 +1780,7 @@
         </a>
         <a href="https://portal.fiocruz.br/noticia/saude-mental-e-importante-para-o-bem-estar-dos-trabalhadores" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
           <div class="icone-pesq"><i class="fas fa-brazil"></i></div>
-          <h3>Fiocruz · Saúde e trabalho</h3>
+          <h3>🔬 Fiocruz · Saúde e trabalho</h3>
           <span class="fonte"><i class="far fa-file-alt"></i> Fundação Oswaldo Cruz</span>
           <p>Impacto do ambiente laboral na saúde mental dos trabalhadores brasileiros.</p>
           <span class="seta">Acessar pesquisa →</span>
@@ -1729,7 +1788,7 @@
         </a>
         <a href="https://www.scielo.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
           <div class="icone-pesq"><i class="fas fa-book-open"></i></div>
-          <h3>SciELO · Saúde mental Brasil</h3>
+          <h3>📚 SciELO · Saúde mental Brasil</h3>
           <span class="fonte"><i class="far fa-file-alt"></i> Scientific Electronic Library Online</span>
           <p>Artigos científicos sobre saúde mental, depressão e ansiedade no Brasil.</p>
           <span class="seta">Acessar pesquisa →</span>
@@ -1737,7 +1796,7 @@
         </a>
         <a href="https://www.abp.org.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
           <div class="icone-pesq"><i class="fas fa-psychiatry"></i></div>
-          <h3>ABP · Diretrizes brasileiras</h3>
+          <h3>🧠 ABP · Diretrizes brasileiras</h3>
           <span class="fonte"><i class="far fa-file-alt"></i> Associação Brasileira de Psiquiatria</span>
           <p>Diretrizes e pesquisas sobre tratamento de transtornos mentais no Brasil.</p>
           <span class="seta">Acessar pesquisa →</span>
@@ -1745,7 +1804,7 @@
         </a>
         <a href="https://www.revista.ufpe.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
           <div class="icone-pesq"><i class="fas fa-graduation-cap"></i></div>
-          <h3>UFPE · Ansiedade escolar</h3>
+          <h3>📖 UFPE · Ansiedade escolar</h3>
           <span class="fonte"><i class="far fa-file-alt"></i> Universidade Federal de Pernambuco</span>
           <p>Estudos sobre ansiedade e desempenho escolar em adolescentes brasileiros.</p>
           <span class="seta">Acessar pesquisa →</span>
@@ -1784,6 +1843,21 @@
       </div>
     </div>
 
+    <!-- FRASE MOTIVACIONAL FINAL -->
+    <div class="frase-motivacional">
+      <div class="icone-fundo">💛</div>
+      <div class="emoji-grande">🌻</div>
+      <p class="frase-texto">
+        "O sucesso é a soma de pequenos esforços repetidos dia após dia.
+        <br>Acredite no seu potencial, porque dentro de você existe uma força
+        <br>capaz de transformar qualquer sonho em realidade.
+        <br><span class="destaque-dourado">Nunca desista, pois a jornada é tão valiosa quanto a conquista!</span>"
+      </p>
+      <div class="selo">
+        <i class="fas fa-ribbon laco-amarelo"></i> Setembro Amarelo · Prevenção sempre
+      </div>
+    </div>
+
     <footer class="footer">
       <div class="simbolo">
         <i class="fas fa-circle" style="color: var(--dourado-escuro);"></i>
@@ -1795,7 +1869,9 @@
         <small>© 2026 · Saúde Mental nas Escolas</small>
       </div>
       <div class="autoria">
-        <i class="fas fa-graduation-cap"></i> Feito por <strong>Eshila Fernanda</strong> · 1º ano EM
+        <i class="fas fa-graduation-cap"></i>
+        <strong>Este trabalho foi realizado pelos alunos do 1º B de Informática:</strong><br>
+        Eshila Fernanda · Marina Alves · Davi Ferreira · Victória Régia · Pedro Lucas Lopes · Emily Diogo · Lorena Teixeira
       </div>
     </footer>
   </div>

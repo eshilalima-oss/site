@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saúde Mental nas Escolas · Setembro Amarelo</title>
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: #fef9e7;
+      color: #2e2416;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    :root {
+      --amarelo: #f5c842;
+      --amarelo-pastel: #fcf3d4;
+      --dourado: #c29a3b;
+      --dourado-claro: #e6c87a;
+      --dourado-escuro: #a67c2e;
+      --texto-escuro: #2e2416;
+      --sombra-suave: 0 12px 30px rgba(194, 154, 59, 0.2);
+      --setembro-amarelo: #f5b81b;
+    }
+
+    /* cabeçalho */
+    .header {
+      background: linear-gradient(145deg, #f8de8a, #f5c842);
+      padding: 2rem 2rem 1.8rem;
+      border-radius: 48px 48px 48px 12px;
+      box-shadow: var(--sombra-suave);
+      margin-bottom: 2.5rem;
+      border: 2px solid var(--dourado);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::after {
+      content: "📚";
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+      font-size: 4rem;
+      opacity: 0.12;
+      transform: rotate(10deg);
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: #2e2416;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .header h1 i {
+      color: var(--dourado);
+      font-size: 2.8rem;
+      filter: drop-shadow(0 2px 4px rgba(194, 154, 59, 0.4));
+    }
+
+    .header p {
+      font-size: 1.25rem;
+      margin-top: 0.5rem;
+      color: #2e2416;
+      background: rgba(255, 248, 220, 0.5);
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
+      font-weight: 500;
+      border: 1px solid var(--dourado);
+    }
+
+    /* BANNER SETEMBRO AMARELO */
+    .setembro-banner {
+      background: linear-gradient(135deg, #fcf3d4, #f5c842);
+      padding: 1.8rem 2rem;
+      border-radius: 60px 12px 60px 12px;
+      margin-bottom: 2rem;
+      border: 3px solid var(--dourado);
+      box-shadow: 0 8px 25px rgba(194, 154, 59, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .setembro-banner:hover {
+      transform: scale(1.01);
+      box-shadow: 0 12px 35px rgba(194, 154, 59, 0.4);
+    }
+
+    .setembro-banner .laco {
+      font-size: 3.5rem;
+      color: var(--dourado);
+      filter: drop-shadow(0 2px 8px rgba(194, 154, 59, 0.4));
+    }
+
+    .setembro-banner .texto-banner h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2e2416;
+      letter-spacing: 1px;
+    }
+
+    .setembro-banner .texto-banner p {
+      font-size: 1.1rem;
+      color: #2e2416;
+      font-weight: 400;
+    }
+
+    .setembro-banner .texto-banner .destaque {
+      background: rgba(255, 255, 255, 0.4);
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      display: inline-block;
+      border: 2px solid var(--dourado);
+      font-weight: 600;
+    }
+
+    .banner-hidden-msg {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100%);
+      background: #2e2416;
+      color: #fef9e7;
+      padding: 0.5rem 1.5rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      opacity: 0;
+      transition: 0.4s ease;
+      pointer-events: none;
+      border: 2px solid var(--dourado);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .setembro-banner:hover .banner-hidden-msg {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* SEÇÃO DE MENSAGENS DE APOIO */
+    .mensagens-apoio {
+      background: linear-gradient(135deg, #fcf3d4, #fff8e0);
+      padding: 2.2rem 2.5rem 2.8rem;
+      border-radius: 40px 12px 40px 12px;
+      margin: 2.5rem 0;
+      border: 3px solid var(--dourado);
+      box-shadow: var(--sombra-suave);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mensagens-apoio::after {
+      content: "💛";
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+      font-size: 5rem;
+      opacity: 0.06;
+    }
+
+    .mensagens-apoio .apoio-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .mensagens-apoio .apoio-header .apoio-icon {
+      font-size: 2.8rem;
+      color: var(--dourado);
+      background: rgba(194, 154, 59, 0.12);
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+      border: 3px solid var(--dourado);
+    }
+
+    .mensagens-apoio .apoio-header h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #2e2416;
+    }
+
+    .mensagens-apoio .apoio-header h2 span {
+      color: var(--dourado);
+    }
+
+    .mensagens-apoio .apoio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 0.5rem;
+    }
+
+    .mensagens-apoio .apoio-grid .grupo-msg {
+      background: rgba(255, 252, 235, 0.75);
+      padding: 1.5rem 1.8rem;
+      border-radius: 30px 8px 30px 8px;
+      border: 2px solid var(--dourado-claro);
+      transition: 0.3s;
+    }
+
+    .mensagens-apoio .apoio-grid .grupo-msg:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(194, 154, 59, 0.15);
+      border-color: var(--dourado);
+    }
+
+    .mensagens-apoio .apoio-grid .grupo-msg .grupo-tag {
+      display: inline-block;
+      background: var(--dourado);
+      color: #fff;
+      padding: 0.15rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.8rem;
+      border: 1px solid var(--dourado-escuro);
+    }
+
+    .mensagens-apoio .apoio-grid .grupo-msg h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2e2416;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mensagens-apoio .apoio-grid .grupo-msg h3 i {
+      color: var(--dourado);
+    }
+
+    .mensagens-apoio .apoio-grid .grupo-msg .msg-lista {
+      list-style: none;
+      padding: 0;
+    }
+
+    .mensagens-apoio .apoio-grid .grupo-msg .msg-lista li {
+      font-size: 0.95rem;
+      color: #2e2416;
+      padding: 0.5rem 0;
+      padding-left: 2rem;
+      position: relative;
+      border-bottom: 1px dashed rgba(194, 154, 59, 0.1);
+    }
+
+    .mensagens-apoio .apoio-grid .grupo-msg .msg-lista li:last-child {
+      border-bottom: none;
+    }
+
+    .mensagens-apoio .apoio-grid .grupo-msg .msg-lista li::before {
+      content: "💛";
+      position: absolute;
+      left: 0;
+      font-size: 0.9rem;
+    }
+
+    .mensagens-apoio .apoio-grid .grupo-msg .msg-lista li .autor-msg {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--dourado);
+      font-weight: 500;
+      margin-top: 0.1rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .mensagens-apoio .apoio-grid {
+        grid-template-columns: 1fr;
+      }
+      .mensagens-apoio .apoio-header h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* SEÇÃO ESPECIAL ALUNOS ENSINO MÉDIO */
+    .alunos-section {
+      background: linear-gradient(135deg, #fcf3d4, #fff8e0);
+      padding: 2.2rem 2.5rem 2.8rem;
+      border-radius: 40px 12px 40px 12px;
+      margin: 2.5rem 0;
+      border: 3px solid var(--dourado);
+      box-shadow: var(--sombra-suave);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .alunos-section::after {
+      content: "🎓";
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      font-size: 6rem;
+      opacity: 0.06;
+    }
+
+    .alunos-section .alunos-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .alunos-section .alunos-header .alunos-icon {
+      font-size: 2.8rem;
+      color: var(--dourado);
+      background: rgba(194, 154, 59, 0.12);
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+      border: 3px solid var(--dourado);
+    }
+
+    .alunos-section .alunos-header h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #2e2416;
+    }
+
+    .alunos-section .alunos-header h2 span {
+      color: var(--dourado);
+    }
+
+    .alunos-section .alunos-sub {
+      font-size: 1.05rem;
+      color: #2e2416;
+      margin-bottom: 1.2rem;
+      background: rgba(194, 154, 59, 0.08);
+      padding: 0.4rem 1.4rem;
+      border-radius: 40px;
+      display: inline-block;
+      border: 2px dashed var(--dourado);
+      font-weight: 500;
+    }
+
+    .alunos-section .alunos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    .alunos-section .alunos-grid .ano-card {
+      background: rgba(255, 252, 235, 0.75);
+      padding: 1.5rem 1.8rem;
+      border-radius: 30px 8px 30px 8px;
+      border: 2px solid var(--dourado-claro);
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .alunos-section .alunos-grid .ano-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(194, 154, 59, 0.2);
+      border-color: var(--dourado);
+    }
+
+    .alunos-section .alunos-grid .ano-card .ano-tag {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--dourado);
+      color: #fff;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border: 1px solid var(--dourado-escuro);
+    }
+
+    .alunos-section .alunos-grid .ano-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2e2416;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .alunos-section .alunos-grid .ano-card h3 i {
+      color: var(--dourado);
+    }
+
+    .alunos-section .alunos-grid .ano-card .ano-desc {
+      font-size: 0.95rem;
+      color: #2e2416;
+      margin-bottom: 0.8rem;
+    }
+
+    .alunos-section .alunos-grid .ano-card .ano-lista {
+      list-style: none;
+      padding: 0;
+    }
+
+    .alunos-section .alunos-grid .ano-card .ano-lista li {
+      font-size: 0.9rem;
+      color: #2e2416;
+      padding: 0.3rem 0;
+      padding-left: 1.6rem;
+      position: relative;
+      border-bottom: 1px dashed rgba(194, 154, 59, 0.15);
+    }
+
+    .alunos-section .alunos-grid .ano-card .ano-lista li:last-child {
+      border-bottom: none;
+    }
+
+    .alunos-section .alunos-grid .ano-card .ano-lista li::before {
+      content: "💛";
+      position: absolute;
+      left: 0;
+      font-size: 0.85rem;
+    }
+
+    .alunos-section .alunos-dicas {
+      background: rgba(194, 154, 59, 0.06);
+      padding: 1.2rem 1.8rem;
+      border-radius: 30px;
+      border-left: 5px solid var(--dourado);
+      margin-top: 0.5rem;
+    }
+
+    .alunos-section .alunos-dicas h4 {
+      font-size: 1.1rem;
+      color: var(--dourado);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .alunos-section .alunos-dicas p {
+      font-size: 0.95rem;
+      color: #2e2416;
+    }
+
+    .alunos-section .alunos-dicas .dicas-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    .alunos-section .alunos-dicas .dicas-tags span {
+      background: #fcf3d4;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      border: 1px solid var(--dourado-claro);
+      color: #2e2416;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .alunos-section .alunos-grid {
+        grid-template-columns: 1fr;
+      }
+      .alunos-section .alunos-header h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* SEÇÃO MIKE EMME */
+    .mike-section {
+      background: linear-gradient(135deg, #fcf3d4, #fffcf0);
+      padding: 2rem 2.5rem;
+      border-radius: 40px 12px 40px 12px;
+      margin: 2.5rem 0;
+      border: 3px solid var(--dourado);
+      box-shadow: var(--sombra-suave);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mike-section::before {
+      content: "🚗";
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+      font-size: 8rem;
+      opacity: 0.08;
+      transform: rotate(-10deg);
+    }
+
+    .mike-section .mike-header {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .mike-section .mike-header .mike-icon {
+      font-size: 3.5rem;
+      color: var(--dourado);
+      background: rgba(194, 154, 59, 0.12);
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 60px;
+      border: 3px solid var(--dourado);
+    }
+
+    .mike-section .mike-header h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #2e2416;
+    }
+
+    .mike-section .mike-header h2 span {
+      color: var(--dourado);
+    }
+
+    .mike-section .mike-sub {
+      font-size: 1.1rem;
+      color: #2e2416;
+      margin-bottom: 1rem;
+      background: rgba(194, 154, 59, 0.08);
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      display: inline-block;
+      border: 2px dashed var(--dourado);
+      font-weight: 500;
+    }
+
+    .mike-section .mike-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .mike-section .mike-grid .mike-card {
+      background: rgba(255, 252, 235, 0.7);
+      padding: 1.2rem 1.5rem;
+      border-radius: 30px 8px 30px 8px;
+      border: 2px solid var(--dourado-claro);
+      transition: 0.3s;
+    }
+
+    .mike-section .mike-grid .mike-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(194, 154, 59, 0.15);
+      border-color: var(--dourado);
+    }
+
+    .mike-section .mike-grid .mike-card h4 {
+      font-size: 1.1rem;
+      color: var(--dourado);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mike-section .mike-grid .mike-card p {
+      font-size: 0.95rem;
+      color: #2e2416;
+    }
+
+    .mike-section .mike-legado {
+      margin-top: 1.5rem;
+      background: rgba(194, 154, 59, 0.06);
+      padding: 1rem 1.5rem;
+      border-radius: 30px;
+      border-left: 5px solid var(--dourado);
+      font-style: italic;
+      color: #2e2416;
+    }
+
+    .mike-section .mike-legado i {
+      color: var(--dourado);
+      margin-right: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .mike-section .mike-grid {
+        grid-template-columns: 1fr;
+      }
+      .mike-section .mike-header h2 {
+        font-size: 1.6rem;
+      }
+      .mike-section .mike-header .mike-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2.5rem;
+      }
+    }
+
+    /* cartões principais */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .card {
+      background: #fffdf3;
+      border-radius: 32px 12px 32px 12px;
+      padding: 1.8rem 1.8rem 2rem;
+      box-shadow: var(--sombra-suave);
+      border-left: 6px solid var(--dourado);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+      backdrop-filter: blur(2px);
+      background: rgba(255, 253, 240, 0.8);
+      border: 1px solid var(--dourado-claro);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px rgba(194, 154, 59, 0.25);
+      border-left-color: var(--dourado);
+    }
+
+    .card i {
+      font-size: 2.6rem;
+      color: var(--dourado);
+      background: #fcf3d4;
+      padding: 0.6rem;
+      border-radius: 30px;
+      margin-bottom: 1rem;
+      display: inline-block;
+      width: 60px;
+      text-align: center;
+      border: 2px solid var(--dourado-claro);
+    }
+
+    .card h3 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #2e2416;
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid var(--dourado-claro);
+      padding-bottom: 0.4rem;
+    }
+
+    .card p {
+      color: #2e2416;
+      font-size: 1rem;
+    }
+
+    .card-hidden-msg {
+      position: absolute;
+      bottom: 12px;
+      right: 16px;
+      background: var(--dourado);
+      color: #fff;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: 0.3s ease;
+      transform: translateY(8px);
+      border: 1px solid var(--dourado-escuro);
+    }
+
+    .card:hover .card-hidden-msg {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* SEÇÃO NÚMEROS DE EMERGÊNCIA */
+    .emergencia-section {
+      background: linear-gradient(135deg, #fcf3d4, #f8e6b0);
+      padding: 2rem 2rem 2.5rem;
+      border-radius: 40px 12px 40px 12px;
+      margin: 2.5rem 0;
+      border: 2px solid var(--dourado);
+    }
+
+    .emergencia-section h2 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #2e2416;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.8rem;
+    }
+
+    .emergencia-section h2 i {
+      color: var(--dourado);
+      font-size: 2.2rem;
+    }
+
+    .emergencia-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .numero-card {
+      background: rgba(255, 252, 235, 0.8);
+      backdrop-filter: blur(2px);
+      padding: 1.2rem 1.4rem;
+      border-radius: 40px 12px 40px 12px;
+      border: 2px solid var(--dourado-claro);
+      box-shadow: 0 4px 10px rgba(194, 154, 59, 0.08);
+      transition: 0.2s;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .numero-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--dourado);
+      background: #fef7d4;
+      box-shadow: 0 8px 18px rgba(194, 154, 59, 0.2);
+    }
+
+    .numero-card .num {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--dourado);
+      letter-spacing: 1px;
+      background: #fcf3d4;
+      display: inline-block;
+      padding: 0.2rem 1.2rem;
+      border-radius: 60px;
+      border: 2px solid var(--dourado);
+      margin-bottom: 0.4rem;
+    }
+
+    .numero-card .desc {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #2e2416;
+    }
+
+    .numero-card .small-desc {
+      font-size: 0.85rem;
+      color: #2e2416;
+      opacity: 0.8;
+    }
+
+    .numero-card .num-hidden-msg {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #2e2416;
+      color: #fef9e7;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      opacity: 0;
+      transition: 0.3s ease;
+      transform: scale(0.8);
+      border: 2px solid var(--dourado);
+    }
+
+    .numero-card:hover .num-hidden-msg {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* SEÇÃO ONGs */
+    .ongs-section {
+      background: #fffcf0;
+      padding: 2rem 2rem 2.5rem;
+      border-radius: 40px 12px 40px 12px;
+      margin: 2.5rem 0;
+      border: 2px solid var(--dourado);
+      box-shadow: var(--sombra-suave);
+    }
+
+    .ongs-section h2 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #2e2416;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.8rem;
+    }
+
+    .ongs-section h2 i {
+      color: var(--dourado);
+      font-size: 2.2rem;
+    }
+
+    .ongs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .ong-card {
+      background: rgba(255, 253, 240, 0.7);
+      backdrop-filter: blur(2px);
+      padding: 1.4rem 1.4rem 1.6rem;
+      border-radius: 40px 12px 40px 12px;
+      border: 2px solid var(--dourado-claro);
+      transition: all 0.25s ease;
+      text-decoration: none;
+      color: #2e2416;
+      display: block;
+      box-shadow: 0 4px 8px rgba(194, 154, 59, 0.06);
+      position: relative;
+    }
+
+    .ong-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--dourado);
+      background: #fef7d4;
+      box-shadow: 0 12px 24px rgba(194, 154, 59, 0.2);
+    }
+
+    .ong-card .ong-icon {
+      font-size: 2rem;
+      color: var(--dourado);
+      background: #fcf3d4;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 40px;
+      margin-bottom: 0.8rem;
+      border: 2px solid var(--dourado);
+    }
+
+    .ong-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2e2416;
+    }
+
+    .ong-card .ong-desc {
+      font-size: 0.95rem;
+      color: #2e2416;
+      margin: 0.3rem 0 0.6rem;
+    }
+
+    .ong-card .ong-link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--dourado);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.2s;
+    }
+
+    .ong-card:hover .ong-link {
+      transform: translateX(6px);
+      color: var(--dourado-escuro);
+    }
+
+    .ong-hidden-msg {
+      position: absolute;
+      bottom: 8px;
+      right: 12px;
+      font-size: 0.7rem;
+      color: var(--dourado);
+      opacity: 0;
+      transition: 0.3s;
+      background: #fcf3d4;
+      padding: 0.15rem 0.8rem;
+      border-radius: 30px;
+      border: 1px solid var(--dourado-claro);
+    }
+
+    .ong-card:hover .ong-hidden-msg {
+      opacity: 1;
+    }
+
+    /* PESQUISAS (balões) */
+    .pesquisas-section {
+      background: linear-gradient(135deg, #fcf3d4, #f8e6b0);
+      padding: 2.2rem 2rem 2.8rem;
+      border-radius: 40px 12px 40px 12px;
+      margin: 2.5rem 0;
+      border: 2px solid var(--dourado);
+    }
+
+    .pesquisas-section h2 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #2e2416;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .pesquisas-section h2 i {
+      color: var(--dourado);
+      font-size: 2.2rem;
+    }
+
+    .pesquisas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .pesquisa-card {
+      background: rgba(255, 252, 235, 0.85);
+      backdrop-filter: blur(2px);
+      padding: 1.6rem 1.6rem 1.8rem;
+      border-radius: 60px 16px 60px 16px;
+      border: 2px solid var(--dourado-claro);
+      box-shadow: 0 6px 14px rgba(194, 154, 59, 0.10);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: #2e2416;
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pesquisa-card::before {
+      content: "🔗";
+      position: absolute;
+      right: 16px;
+      top: 12px;
+      font-size: 1.6rem;
+      opacity: 0.2;
+      transition: 0.3s;
+    }
+
+    .pesquisa-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: var(--dourado);
+      box-shadow: 0 18px 30px rgba(194, 154, 59, 0.3);
+      background: #fef7d4;
+    }
+
+    .pesquisa-card:hover::before {
+      opacity: 0.8;
+      transform: rotate(10deg);
+    }
+
+    .pesquisa-card .icone-pesq {
+      font-size: 2.2rem;
+      color: var(--dourado);
+      background: #fcf3d4;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 40px;
+      margin-bottom: 1rem;
+      border: 2px solid var(--dourado);
+    }
+
+    .pesquisa-card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2e2416;
+      margin-bottom: 0.4rem;
+    }
+
+    .pesquisa-card .fonte {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #2e2416;
+      background: #f5e1a0;
+      display: inline-block;
+      padding: 0.15rem 1rem;
+      border-radius: 30px;
+      margin: 0.4rem 0 0.6rem;
+      border: 1px solid var(--dourado);
+      font-weight: 500;
+    }
+
+    .pesquisa-card p {
+      font-size: 0.95rem;
+      color: #2e2416;
+      margin-top: 0.3rem;
+    }
+
+    .pesquisa-card .seta {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-weight: 600;
+      color: var(--dourado);
+      transition: 0.2s;
+    }
+
+    .pesquisa-card:hover .seta {
+      transform: translateX(6px);
+      color: var(--dourado-escuro);
+    }
+
+    .pesquisa-hidden-msg {
+      position: absolute;
+      bottom: 8px;
+      left: 16px;
+      font-size: 0.65rem;
+      color: var(--dourado);
+      opacity: 0;
+      transition: 0.3s;
+      background: rgba(252, 243, 212, 0.9);
+      padding: 0.15rem 0.8rem;
+      border-radius: 30px;
+      border: 1px solid var(--dourado-claro);
+    }
+
+    .pesquisa-card:hover .pesquisa-hidden-msg {
+      opacity: 1;
+    }
+
+    /* BOTÃO DE MENSAGEM SURPRESA */
+    .surpresa-btn {
+      display: inline-block;
+      background: var(--dourado);
+      color: #fff;
+      border: 2px solid var(--dourado-escuro);
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(194, 154, 59, 0.4);
+      margin: 1rem 0;
+    }
+
+    .surpresa-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(194, 154, 59, 0.5);
+      background: var(--dourado-claro);
+      color: #2e2416;
+    }
+
+    /* modal de mensagem surpresa */
+    .modal-msg {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(6px);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-msg.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #fef9e7;
+      max-width: 500px;
+      padding: 2.5rem 2.5rem 2rem;
+      border-radius: 60px 16px 60px 16px;
+      border: 4px solid var(--dourado);
+      box-shadow: 0 20px 60px rgba(194, 154, 59, 0.4);
+      text-align: center;
+      position: relative;
+      animation: popIn 0.4s ease;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-content .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--dourado);
+      transition: 0.2s;
+      background: none;
+      border: none;
+    }
+
+    .modal-content .modal-close:hover {
+      transform: rotate(90deg);
+      color: var(--dourado-escuro);
+    }
+
+    .modal-content .modal-icon {
+      font-size: 4rem;
+      color: var(--dourado);
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-content h2 {
+      font-size: 1.8rem;
+      color: #2e2416;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-content p {
+      font-size: 1.2rem;
+      color: #2e2416;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .modal-content .autor-msg {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      color: #2e2416;
+      font-weight: 500;
+    }
+
+    /* citação */
+    .quote-block {
+      background: var(--amarelo-pastel);
+      padding: 2rem 2.5rem;
+      border-radius: 80px 16px 80px 16px;
+      margin: 2.5rem 0;
+      border: 2px solid var(--dourado);
+      box-shadow: var(--sombra-suave);
+      position: relative;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .quote-block:hover {
+      transform: scale(1.01);
+      box-shadow: 0 16px 32px rgba(194, 154, 59, 0.2);
+    }
+
+    .quote-block i {
+      color: var(--dourado);
+      font-size: 2.5rem;
+      margin-right: 10px;
+      opacity: 0.8;
+    }
+
+    .quote-block blockquote {
+      font-size: 1.5rem;
+      font-style: italic;
+      font-weight: 300;
+      color: #2e2416;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .quote-block blockquote span {
+      font-weight: 500;
+      color: var(--dourado);
+    }
+
+    .quote-block .autor {
+      text-align: right;
+      margin-top: 0.8rem;
+      font-weight: 400;
+      color: #2e2416;
+      letter-spacing: 0.5px;
+    }
+
+    .quote-hidden-msg {
+      position: absolute;
+      bottom: -12px;
+      right: 30px;
+      background: #2e2416;
+      color: #fef9e7;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      opacity: 0;
+      transition: 0.4s ease;
+      transform: translateY(10px);
+      border: 2px solid var(--dourado);
+    }
+
+    .quote-block:hover .quote-hidden-msg {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* recursos */
+    .recursos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      background: #fffcf0;
+      padding: 1.8rem 2.5rem;
+      border-radius: 60px 12px 60px 12px;
+      border: 2px solid var(--dourado);
+      margin-top: 2rem;
+      box-shadow: var(--sombra-suave);
+    }
+
+    .recursos .info h4 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #2e2416;
+    }
+
+    .recursos .info p {
+      color: #2e2416;
+    }
+
+    .recursos .btn {
+      background: var(--dourado-claro);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      border: 2px solid var(--dourado);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #2e2416;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 4px 8px rgba(194, 154, 59, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .recursos .btn:hover {
+      background: var(--dourado);
+      border-color: var(--dourado-escuro);
+      color: #fff;
+      transform: scale(1.02);
+    }
+
+    /* rodapé com autoria */
+    .footer {
+      margin-top: 4rem;
+      padding: 1.8rem 0.5rem 0.8rem;
+      border-top: 3px solid var(--dourado);
+      text-align: center;
+      color: #2e2416;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer .simbolo {
+      font-size: 2rem;
+      opacity: 0.6;
+      letter-spacing: 4px;
+    }
+
+    .footer small {
+      opacity: 0.8;
+      font-weight: 300;
+    }
+
+    .footer .autoria {
+      background: rgba(194, 154, 59, 0.12);
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      border: 2px solid var(--dourado);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--dourado);
+    }
+
+    .footer .autoria i {
+      color: var(--dourado);
+      margin-right: 6px;
+    }
+
+    .setembro-tag {
+      background: var(--dourado);
+      color: #fff;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      border: 1px solid var(--dourado-escuro);
+    }
+
+    .laco-amarelo { color: var(--dourado); }
+    .sol-icon { color: var(--dourado); }
+
+    @media (max-width: 650px) {
+      .header h1 { font-size: 2.3rem; }
+      .header p { font-size: 1rem; }
+      .quote-block blockquote { font-size: 1.2rem; flex-wrap: wrap; }
+      .recursos { flex-direction: column; align-items: flex-start; }
+      .pesquisas-section h2, .ongs-section h2, .emergencia-section h2, .alunos-section .alunos-header h2, .mensagens-apoio .apoio-header h2 { font-size: 1.8rem; }
+      .pesquisa-card, .ong-card, .numero-card { padding: 1rem; }
+      .numero-card .num { font-size: 2rem; }
+      .setembro-banner .laco { font-size: 2.8rem; }
+      .setembro-banner .texto-banner h2 { font-size: 1.4rem; }
+      .banner-hidden-msg { white-space: normal; font-size: 0.75rem; }
+      .modal-content { margin: 1rem; padding: 1.8rem; }
+      .alunos-section, .mensagens-apoio { padding: 1.5rem; }
+      .alunos-section .alunos-grid .ano-card { padding: 1.2rem; }
+      .footer .autoria { font-size: 0.75rem; padding: 0.2rem 0.8rem; }
+    }
+
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- cabeçalho -->
+    <header class="header">
+      <h1>
+        <i class="fas fa-school"></i> 
+        Saúde Mental nas Escolas
+      </h1>
+      <p><i class="fas fa-phone-volume" style="margin-right: 10px;"></i> Apoio, pesquisas e números que salvam vidas</p>
+    </header>
+
+    <!-- BANNER SETEMBRO AMARELO -->
+    <div class="setembro-banner">
+      <div class="laco">
+        <i class="fas fa-ribbon"></i>
+      </div>
+      <div class="texto-banner">
+        <h2><i class="fas fa-sun sol-icon" style="margin-right: 8px;"></i> Setembro Amarelo</h2>
+        <p><span class="destaque">💛 Setembro é o mês da prevenção ao suicídio</span></p>
+        <p style="margin-top: 0.2rem;">Falar é a melhor solução. <span class="setembro-tag"><i class="fas fa-phone"></i> 188</span></p>
+      </div>
+      <div style="font-size: 2.8rem; opacity: 0.3;">
+        <i class="fas fa-sun sol-icon"></i>
+      </div>
+      <div class="banner-hidden-msg">💛 "Você é mais forte do que imagina. Peça ajuda."</div>
+    </div>
+
+    <!-- SEÇÃO DE MENSAGENS DE APOIO -->
+    <section class="mensagens-apoio">
+      <div class="apoio-header">
+        <div class="apoio-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div>
+          <h2>Mensagens de <span>Apoio</span></h2>
+          <div class="alunos-sub" style="margin-bottom: 0; border: 2px dashed var(--dourado); background: rgba(194,154,59,0.08); padding: 0.3rem 1.2rem; border-radius: 40px; display: inline-block; font-weight: 500; font-size: 0.95rem;">
+            <i class="fas fa-star" style="color: var(--dourado);"></i> Para adultos e alunos
+          </div>
+        </div>
+      </div>
+
+      <div class="apoio-grid">
+        <!-- Mensagens para Alunos -->
+        <div class="grupo-msg">
+          <span class="grupo-tag"><i class="fas fa-graduation-cap"></i> Alunos</span>
+          <h3><i class="fas fa-lightbulb"></i> Para você que está na escola</h3>
+          <ul class="msg-lista">
+            <li>"Você não precisa ter todas as respostas agora. Cada passo que você dá já é uma conquista." <span class="autor-msg">— Para quem está no 1º ano</span></li>
+            <li>"O vestibular não define quem você é. Sua história, sua essência e sua resiliência são muito maiores que uma nota." <span class="autor-msg">— Para quem está no 3º ano</span></li>
+            <li>"É normal sentir medo, ansiedade e incerteza. O que importa é que você continue seguindo em frente, mesmo devagar." <span class="autor-msg">— Para todos os alunos</span></li>
+            <li>"Você é mais forte do que imagina. E não está sozinho(a) — peça ajuda quando precisar." <span class="autor-msg">— Mensagem de apoio</span></li>
+            <li>"Cada dia é uma nova oportunidade para recomeçar. Não desista de você." <span class="autor-msg">— Inspire-se</span></li>
+          </ul>
+        </div>
+
+        <!-- Mensagens para Adultos -->
+        <div class="grupo-msg">
+          <span class="grupo-tag"><i class="fas fa-users"></i> Adultos</span>
+          <h3><i class="fas fa-heart"></i> Para pais, professores e educadores</h3>
+          <ul class="msg-lista">
+            <li>"Cuidar da sua saúde mental não é egoísmo — é essencial para que você possa cuidar dos outros." <span class="autor-msg">— Para pais e mães</span></li>
+            <li>"Os alunos aprendem não só com o que você ensina, mas com quem você é. Cuide de si para ser um exemplo de bem-estar." <span class="autor-msg">— Para professores</span></li>
+            <li>"A escuta ativa e o acolhimento são as ferramentas mais poderosas que você pode oferecer a um jovem." <span class="autor-msg">— Para educadores</span></li>
+            <li>"Não se cobre tanto. Você está fazendo o melhor que pode com as ferramentas que tem." <span class="autor-msg">— Para todos os adultos</span></li>
+            <li>"Sua presença e seu apoio fazem mais diferença do que você imagina na vida de um aluno." <span class="autor-msg">— Mensagem de reconhecimento</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO ESPECIAL ALUNOS ENSINO MÉDIO -->
+    <section class="alunos-section">
+      <div class="alunos-header">
+        <div class="alunos-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div>
+          <h2>Saúde Mental no <span>Ensino Médio</span></h2>
+          <div class="alunos-sub"><i class="fas fa-star" style="color: var(--dourado);"></i> Foco especial no 1º e 3º ano</div>
+        </div>
+      </div>
+
+      <div class="alunos-grid">
+        <!-- 1º Ano -->
+        <div class="ano-card">
+          <span class="ano-tag">1º Ano</span>
+          <h3><i class="fas fa-rocket"></i> Adaptação e Novos Começos</h3>
+          <p class="ano-desc">O primeiro ano do ensino médio é marcado por mudanças intensas: nova escola, novos colegas, novos desafios acadêmicos e a pressão de um futuro que começa a se desenhar.</p>
+          <ul class="ano-lista">
+            <li><strong>Desafios comuns:</strong> Ansiedade de adaptação, medo de não se encaixar, sobrecarga com novas matérias.</li>
+            <li><strong>Como cuidar:</strong> Crie novas rotinas, participe de atividades extracurriculares, converse com colegas e professores.</li>
+            <li><strong>Dica:</strong> Permita-se errar. O primeiro ano é um período de descoberta, não de perfeição.</li>
+          </ul>
+        </div>
+
+        <!-- 3º Ano -->
+        <div class="ano-card">
+          <span class="ano-tag">3º Ano</span>
+          <h3><i class="fas fa-hourglass-half"></i> Pressão e Despedidas</h3>
+          <p class="ano-desc">O terceiro ano é o auge da pressão: vestibular, ENEM, escolha profissional, além da despedida da escola e dos amigos que podem seguir caminhos diferentes.</p>
+          <ul class="ano-lista">
+            <li><strong>Desafios comuns:</strong> Síndrome do pânico pré-vestibular, crise existencial, medo do futuro, luto da despedida.</li>
+            <li><strong>Como cuidar:</strong> Equilibre os estudos com momentos de lazer, durma bem, compartilhe suas angústias com amigos e familiares.</li>
+            <li><strong>Dica:</strong> O vestibular não define quem você é. Você é muito mais do que uma nota.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="alunos-dicas">
+        <h4><i class="fas fa-lightbulb" style="color: var(--dourado);"></i> Dicas para todos os alunos</h4>
+        <p>💛 A saúde mental não é um luxo, é uma necessidade. Cuidar da mente é tão importante quanto estudar para as provas.</p>
+        <div class="dicas-tags">
+          <span>🧘 Respire fundo</span>
+          <span>🗣️ Converse com alguém</span>
+          <span>📝 Escreva seus sentimentos</span>
+          <span>🎧 Ouça música</span>
+          <span>🚶 Dê uma caminhada</span>
+          <span>💤 Durma bem</span>
+          <span>📱 Desconecte-se</span>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #2e2416;">
+          <i class="fas fa-ribbon laco-amarelo"></i> Se você está passando por um momento difícil, não hesite em pedir ajuda. Ligue 188 ou converse com o psicólogo da sua escola.
+        </p>
+      </div>
+    </section>
+
+    <!-- SEÇÃO MIKE EMME -->
+    <section class="mike-section">
+      <div class="mike-header">
+        <div class="mike-icon">
+          <i class="fas fa-ribbon"></i>
+        </div>
+        <div>
+          <h2>Mike Emme <span>💛</span></h2>
+          <div class="mike-sub"><i class="fas fa-star" style="color: var(--dourado);"></i> A história que inspirou o Setembro Amarelo</div>
+        </div>
+      </div>
+
+      <div class="mike-grid">
+        <div class="mike-card">
+          <h4><i class="fas fa-car" style="color: var(--dourado);"></i> O Mustang Amarelo</h4>
+          <p>Em 1994, Mike Emme, um jovem de 17 anos apaixonado por mecânica, restaurou um Ford Mustang 1968 e o pintou de amarelo. Ficou conhecido como "Mustang Mike" entre seus amigos.</p>
+        </div>
+        <div class="mike-card">
+          <h4><i class="fas fa-heart" style="color: var(--dourado);"></i> O Legado</h4>
+          <p>Após sua morte, seus pais Dale e Darlene Emme distribuíram cartões com fitas amarelas e a mensagem "Se você precisar, peça ajuda". O gesto deu origem ao Yellow Ribbon Suicide Prevention Program.</p>
+        </div>
+        <div class="mike-card">
+          <h4><i class="fas fa-globe-americas" style="color: var(--dourado);"></i> Impacto Global</h4>
+          <p>O movimento se espalhou pelos Estados Unidos e pelo mundo. Em 2003, a OMS criou o Dia Mundial de Prevenção ao Suicídio (10 de setembro).</p>
+        </div>
+        <div class="mike-card">
+          <h4><i class="fas fa-flag" style="color: var(--dourado);"></i> No Brasil</h4>
+          <p>Em 2015, a ABP (Associação Brasileira de Psiquiatria), o CFM e o CVV trouxeram a campanha ao Brasil, criando o Setembro Amarelo.</p>
+        </div>
+      </div>
+
+      <div class="mike-legado">
+        <i class="fas fa-quote-left"></i> 
+        "O amarelo do Mustang de Mike se tornou símbolo de esperança e prevenção no mundo inteiro. Sua história nos lembra que falar sobre saúde mental pode salvar vidas."
+        <div style="margin-top: 0.5rem; font-style: normal; font-weight: 500; font-size: 0.9rem; color: var(--dourado);">
+          — Legado de Mike Emme, 1994
+        </div>
+      </div>
+    </section>
+
+    <!-- cartões principais -->
+    <div class="cards-grid">
+      <div class="card">
+        <i class="fas fa-heart-circle-check"></i>
+        <h3>Autocuidado</h3>
+        <p>Pequenas pausas, respiração consciente e momentos de silêncio ajudam a restaurar o equilíbrio emocional.</p>
+        <div class="card-hidden-msg">✨ "Cuide de você primeiro."</div>
+      </div>
+      <div class="card">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h3>Apoio</h3>
+        <p>Conversar com amigos, familiares ou profissionais é essencial. Você não precisa passar por isso sozinho.</p>
+        <div class="card-hidden-msg">🤝 "Você não está sozinho."</div>
+      </div>
+      <div class="card">
+        <i class="fas fa-feather-pointed"></i>
+        <h3>Leveza</h3>
+        <p>Permita-se sentir, sem julgamento. A saúde mental floresce quando acolhemos nossas emoções.</p>
+        <div class="card-hidden-msg">🍃 "Acolha suas emoções."</div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO NÚMEROS DE EMERGÊNCIA -->
+    <section class="emergencia-section">
+      <h2><i class="fas fa-phone"></i> Números de apoio 24h <span style="font-size: 1.2rem; margin-left: 8px;"><i class="fas fa-ribbon laco-amarelo"></i></span></h2>
+      <div class="emergencia-grid">
+        <div class="numero-card">
+          <div class="num">188</div>
+          <div class="desc">CVV – Centro de Valorização da Vida</div>
+          <div class="small-desc">Atendimento gratuito, sigiloso e 24h</div>
+          <div class="num-hidden-msg">💛 Ligue, você importa</div>
+        </div>
+        <div class="numero-card">
+          <div class="num">190</div>
+          <div class="desc">Polícia Militar</div>
+          <div class="small-desc">Emergências e situações de risco</div>
+          <div class="num-hidden-msg">🛡️ Sua segurança em primeiro lugar</div>
+        </div>
+        <div class="numero-card">
+          <div class="num">192</div>
+          <div class="desc">SAMU</div>
+          <div class="small-desc">Serviço de Atendimento Móvel de Urgência</div>
+          <div class="num-hidden-msg">🚑 Socorro sempre disponível</div>
+        </div>
+        <div class="numero-card">
+          <div class="num">100</div>
+          <div class="desc">Disque Direitos Humanos</div>
+          <div class="small-desc">Denúncias e orientação (violações)</div>
+          <div class="num-hidden-msg">⚖️ Seus direitos importam</div>
+        </div>
+      </div>
+      <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #2e2416; text-align: center; background: rgba(255,248,220,0.5); padding: 0.6rem; border-radius: 60px; border: 2px dashed var(--dourado);">
+        <i class="fas fa-ribbon laco-amarelo" style="margin-right: 6px;"></i> Ligue: você não está sozinho(a). Todos os serviços são gratuitos e confidenciais. <i class="fas fa-sun sol-icon" style="margin-left: 6px;"></i>
+      </p>
+    </section>
+
+    <!-- SEÇÃO ONGs -->
+    <section class="ongs-section">
+      <h2><i class="fas fa-hand-holding-heart"></i> ONGs de apoio à saúde mental <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px; font-size: 1.8rem;"></i></h2>
+      <div class="ongs-grid">
+        <a href="https://www.cvv.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-phone-alt"></i></div>
+          <h3>CVV</h3>
+          <div class="ong-desc">Centro de Valorização da Vida – apoio emocional e prevenção ao suicídio.</div>
+          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+          <div class="ong-hidden-msg">💛 "Sua vida tem valor"</div>
+        </a>
+        <a href="https://www.associacaovitale.com.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-people-arrows"></i></div>
+          <h3>Vitalle</h3>
+          <div class="ong-desc">Associação de apoio a pessoas com transtornos mentais e seus familiares.</div>
+          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+          <div class="ong-hidden-msg">🤗 "Família que acolhe"</div>
+        </a>
+        <a href="https://www.abraco.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-ribbon"></i></div>
+          <h3>ABRACO</h3>
+          <div class="ong-desc">Associação Brasileira de Familiares, Amigos e Portadores de Transtornos Mentais.</div>
+          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+          <div class="ong-hidden-msg">💪 "Juntos somos mais fortes"</div>
+        </a>
+        <a href="https://www.instagram.com/mapamentaloficial/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-brain"></i></div>
+          <h3>Mapa Mental</h3>
+          <div class="ong-desc">Projeto de conscientização e acolhimento em saúde mental para jovens.</div>
+          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+          <div class="ong-hidden-msg">🧠 "Sua mente importa"</div>
+        </a>
+        <a href="https://www.setor.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-hand-sparkles"></i></div>
+          <h3>SETOR</h3>
+          <div class="ong-desc">Serviço de apoio terapêutico e reinserção social para pessoas em sofrimento psíquico.</div>
+          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+          <div class="ong-hidden-msg">🌟 "Recomeço é possível"</div>
+        </a>
+        <a href="https://www.saudemental.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+          <div class="ong-icon"><i class="fas fa-globe-americas"></i></div>
+          <h3>Instituto Saúde Mental</h3>
+          <div class="ong-desc">Promoção de saúde mental, pesquisa e combate ao estigma.</div>
+          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+          <div class="ong-hidden-msg">🌍 "Saúde mental é direito de todos"</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE PESQUISAS -->
+    <section class="pesquisas-section">
+      <h2><i class="fas fa-microscope"></i> Pesquisas em destaque <i class="fas fa-sun sol-icon" style="margin-left: 8px; font-size: 1.8rem;"></i></h2>
+      <div class="pesquisas-grid">
+        <a href="https://www.who.int/news-room/fact-sheets/detail/mental-disorders" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+          <div class="icone-pesq"><i class="fas fa-globe-americas"></i></div>
+          <h3>OMS · Transtornos mentais</h3>
+          <span class="fonte"><i class="far fa-file-alt"></i> World Health Organization</span>
+          <p>Dados globais sobre prevalência de depressão, ansiedade e impacto na saúde pública.</p>
+          <span class="seta">Acessar pesquisa →</span>
+          <div class="pesquisa-hidden-msg">📊 "Conhecimento salva vidas"</div>
+        </a>
+        <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02143-7/fulltext" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+          <div class="icone-pesq"><i class="fas fa-newspaper"></i></div>
+          <h3>The Lancet · COVID-19</h3>
+          <span class="fonte"><i class="far fa-file-alt"></i> The Lancet Psychiatry</span>
+          <p>Aumento de transtornos mentais durante a pandemia e estratégias de resposta.</p>
+          <span class="seta">Acessar pesquisa →</span>
+          <div class="pesquisa-hidden-msg">🦠 "Resiliência em tempos difíceis"</div>
+        </a>
+        <a href="https://www.apa.org/monitor/2022/01/specialized-care-mental-health" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+          <div class="icone-pesq"><i class="fas fa-user-md"></i></div>
+          <h3>APA · Acesso ao cuidado</h3>
+          <span class="fonte"><i class="far fa-file-alt"></i> American Psychological Association</span>
+          <p>Barreiras e avanços no acesso a tratamentos de saúde mental.</p>
+          <span class="seta">Acessar pesquisa →</span>
+          <div class="pesquisa-hidden-msg">🏥 "Cuidado acessível para todos"</div>
+        </a>
+        <a href="https://www.nimh.nih.gov/health/statistics/mental-illness" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+          <div class="icone-pesq"><i class="fas fa-database"></i></div>
+          <h3>NIMH · Estatísticas</h3>
+          <span class="fonte"><i class="far fa-file-alt"></i> National Institute of Mental Health</span>
+          <p>Dados atualizados sobre prevalência de doenças mentais e tratamentos.</p>
+          <span class="seta">Acessar pesquisa →</span>
+          <div class="pesquisa-hidden-msg">📈 "Dados que transformam"</div>
+        </a>
+        <a href="https://portal.fiocruz.br/noticia/saude-mental-e-importante-para-o-bem-estar-dos-trabalhadores" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+          <div class="icone-pesq"><i class="fas fa-brazil"></i></div>
+          <h3>Fiocruz · Saúde e trabalho</h3>
+          <span class="fonte"><i class="far fa-file-alt"></i> Fundação Oswaldo Cruz</span>
+          <p>Impacto do ambiente laboral na saúde mental dos trabalhadores brasileiros.</p>
+          <span class="seta">Acessar pesquisa →</span>
+          <div class="pesquisa-hidden-msg">👷 "Trabalho com saúde mental"</div>
+        </a>
+        <a href="https://www.jornal.usp.br/ciencias/ciencias-da-saude/estudo-da-usp-aponta-aumento-de-transtornos-mentais-entre-jovens/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+          <div class="icone-pesq"><i class="fas fa-university"></i></div>
+          <h3>USP · Jovens e ansiedade</h3>
+          <span class="fonte"><i class="far fa-file-alt"></i> Universidade de São Paulo</span>
+          <p>Aumento expressivo de ansiedade e depressão entre adolescentes brasileiros.</p>
+          <span class="seta">Acessar pesquisa →</span>
+          <div class="pesquisa-hidden-msg">🧑‍🎓 "Juventude e saúde mental"</div>
+        </a>
+      </div>
+      <p style="margin-top: 1.8rem; font-size: 0.95rem; color: #2e2416; text-align: center; background: rgba(255,248,220,0.5); padding: 0.6rem; border-radius: 60px; border: 2px dashed var(--dourado);">
+        <i class="fas fa-hand-pointer" style="color: var(--dourado);"></i> Clique em qualquer balão para ler a pesquisa na íntegra (site oficial)
+      </p>
+    </section>
+
+    <!-- citação OMS -->
+    <div class="quote-block">
+      <blockquote>
+        <i class="fas fa-quote-left"></i> 
+        “A saúde mental é um estado de bem-estar no qual o indivíduo percebe as suas próprias capacidades, pode lidar com o estresse da vida, trabalhar de forma produtiva e contribuir para a sua comunidade.”
+        <span>— OMS</span>
+      </blockquote>
+      <div class="autor"><i class="fas fa-angles-right" style="color: var(--dourado);"></i> Organização Mundial da Saúde <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px;"></i></div>
+      <div class="quote-hidden-msg">🌻 "Você tem um propósito único."</div>
+    </div>
+
+    <!-- Botão de mensagem surpresa -->
+    <div style="display: flex; justify-content: center; margin: 1rem 0 0.5rem;">
+      <button class="surpresa-btn" id="surpresaBtn">
+        <i class="fas fa-star" style="margin-right: 8px;"></i> Clique para uma mensagem especial
+      </button>
+    </div>
+
+    <!-- recursos / apoio -->
+    <div class="recursos">
+      <div class="info">
+        <h4><i class="fas fa-phone-volume" style="color: var(--dourado); margin-right: 8px;"></i> Apoio disponível <i class="fas fa-ribbon laco-amarelo" style="margin-left: 6px;"></i></h4>
+        <p><i class="fas fa-circle" style="color: var(--dourado); font-size: 0.6rem; vertical-align: middle;"></i> Ligue para o CVV: 188 (24h) · chat online</p>
+        <p style="font-size: 0.9rem; opacity: 0.8;"><i class="fas fa-clock"></i> Atendimento gratuito e sigiloso</p>
+      </div>
+      <div class="btn" id="apoioBtn">
+        <i class="fas fa-arrow-right"></i> Central de ajuda
+      </div>
+    </div>
+
+    <!-- rodapé com autoria -->
+    <footer class="footer">
+      <div class="simbolo">
+        <i class="fas fa-circle" style="color: var(--dourado);"></i>
+        <i class="fas fa-circle" style="color: #fcf3d4; text-shadow: 0 0 0 var(--dourado);"></i>
+        <i class="fas fa-circle" style="color: var(--dourado);"></i>
+        <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px;"></i>
+      </div>
+      <div>
+        <small>© 2026 · Saúde Mental nas Escolas</small>
+      </div>
+      <div class="autoria">
+        <i class="fas fa-graduation-cap"></i> Feito por <strong>Eshila Fernanda</strong> · 1º ano EM
+      </div>
+    </footer>
+  </div>
+
+  <!-- MODAL de mensagem surpresa -->
+  <div class="modal-msg" id="modalMsg">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-icon"><i class="fas fa-sun"></i></div>
+      <h2>💛 Mensagem para você</h2>
+      <p id="fraseModal">"A vida é feita de recomeços. Cada dia é uma nova oportunidade para ser gentil consigo mesmo."</p>
+      <div class="autor-msg">— Saúde Mental nas Escolas</div>
+    </div>
+  </div>
+
+  <script>
+    // Array de mensagens motivacionais para o modal
+    const mensagens = [
+      "A vida é feita de recomeços. Cada dia é uma nova oportunidade para ser gentil consigo mesmo.",
+      "Você é mais forte do que imagina. Acredite na sua capacidade de superar.",
+      "Não importa o quão devagar você vá, desde que não pare. Cada passo conta.",
+      "A sua existência é um presente. Você faz diferença no mundo.",
+      "Permita-se sentir, permita-se curar. A dor não é permanente.",
+      "Você não está sozinho. Existem pessoas que se importam e querem ajudar.",
+      "A vida pode ser difícil, mas você já sobreviveu a todos os seus dias difíceis até aqui.",
+      "Cuidar da sua mente é um ato de coragem. Você merece esse cuidado.",
+      "Sorria, mesmo que esteja doendo. Um dia o sol voltará a brilhar para você.",
+      "Você é uma obra em construção, e cada cicatriz conta uma história de superação."
+    ];
+
+    // Botão surpresa
+    document.getElementById('surpresaBtn').addEventListener('click', function() {
+      const modal = document.getElementById('modalMsg');
+      const fraseEl = document.getElementById('fraseModal');
+      
+      const randomIndex = Math.floor(Math.random() * mensagens.length);
+      fraseEl.textContent = '"' + mensagens[randomIndex] + '"';
+      
+      modal.classList.add('active');
+    });
+
+    // Fechar modal
+    document.getElementById('modalClose').addEventListener('click', function() {
+      document.getElementById('modalMsg').classList.remove('active');
+    });
+
+    document.getElementById('modalMsg').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('active');
+      }
+    });
+
+    document.getElementById('apoioBtn').addEventListener('click', function() {
+      const modal = document.getElementById('modalMsg');
+      const fraseEl = document.getElementById('fraseModal');
+      const mensagemApoio = "Você é importante. Ligue 188 ou converse com alguém. A ajuda está a um clique de distância.";
+      fraseEl.textContent = '"' + mensagemApoio + '"';
+      modal.classList.add('active');
+    });
+  </script>
+</body>
+</html>

@@ -18,6 +18,7 @@
       background-color: #fffbe6;
       color: #2e2416;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     .container {
@@ -37,6 +38,131 @@
       --sombra-suave: 0 12px 30px rgba(212, 160, 23, 0.25);
     }
 
+    /* ===== ABERTURA ANIMADA ===== */
+    .splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #FFF8DC, #FFD700, #FFF8DC);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: splashFadeOut 0.8s ease 3.5s forwards;
+      overflow: hidden;
+    }
+
+    .splash-screen .splash-ribbon {
+      font-size: 6rem;
+      color: var(--dourado-escuro);
+      animation: pulseRibbon 1.2s ease-in-out infinite;
+      filter: drop-shadow(0 4px 20px rgba(184, 134, 11, 0.4));
+    }
+
+    .splash-screen .splash-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #2e2416;
+      margin-top: 0.5rem;
+      animation: slideUpTitle 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+      text-align: center;
+    }
+
+    .splash-screen .splash-title span {
+      color: var(--dourado-escuro);
+    }
+
+    .splash-screen .splash-sub {
+      font-size: 1.3rem;
+      color: #2e2416;
+      margin-top: 0.3rem;
+      opacity: 0;
+      animation: fadeInSub 0.8s ease 0.5s forwards;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .splash-screen .splash-loader {
+      margin-top: 2rem;
+      width: 200px;
+      height: 4px;
+      background: rgba(184, 134, 11, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      animation: fadeInLoader 0.5s ease 0.8s forwards;
+      opacity: 0;
+    }
+
+    .splash-screen .splash-loader .loader-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--dourado-claro), var(--dourado-escuro));
+      border-radius: 10px;
+      animation: loadBar 2.5s ease 1s forwards;
+    }
+
+    .splash-screen .splash-coracao {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.15;
+      animation: floatHeart 3s ease-in-out infinite;
+    }
+
+    .splash-screen .splash-coracao:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+    .splash-screen .splash-coracao:nth-child(2) { top: 15%; right: 8%; animation-delay: 0.6s; }
+    .splash-screen .splash-coracao:nth-child(3) { bottom: 20%; left: 10%; animation-delay: 1.2s; }
+    .splash-screen .splash-coracao:nth-child(4) { bottom: 15%; right: 5%; animation-delay: 1.8s; }
+    .splash-screen .splash-coracao:nth-child(5) { top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 8rem; opacity: 0.06; animation-delay: 0.3s; }
+
+    @keyframes pulseRibbon {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.08) rotate(5deg); }
+    }
+
+    @keyframes slideUpTitle {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInSub {
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInLoader {
+      to { opacity: 1; }
+    }
+
+    @keyframes loadBar {
+      0% { width: 0%; }
+      80% { width: 85%; }
+      100% { width: 100%; }
+    }
+
+    @keyframes floatHeart {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(10deg); }
+    }
+
+    @keyframes splashFadeOut {
+      0% { opacity: 1; visibility: visible; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+
+    /* CONTEÚDO PRINCIPAL - INICIALMENTE ESCONDIDO */
+    .main-content {
+      opacity: 0;
+      animation: contentFadeIn 0.8s ease 3.8s forwards;
+    }
+
+    @keyframes contentFadeIn {
+      to { opacity: 1; }
+    }
+
+    /* ===== HEADER ===== */
     .header {
       background: linear-gradient(145deg, #FFE066, #FFD700);
       padding: 2rem 2rem 1.8rem;
@@ -88,6 +214,7 @@
       border: 2px solid var(--dourado);
     }
 
+    /* ===== BANNER SETEMBRO AMARELO ===== */
     .setembro-banner {
       background: linear-gradient(135deg, #FFF8DC, #FFD700);
       padding: 1.8rem 2rem;
@@ -162,6 +289,7 @@
       transform: translateX(-50%) translateY(0);
     }
 
+    /* ===== SEÇÃO DE MENSAGENS DE APOIO ===== */
     .mensagens-apoio {
       background: linear-gradient(135deg, #FFF8DC, #FFFDE7);
       padding: 2.2rem 2.5rem 2.8rem;
@@ -305,6 +433,7 @@
       }
     }
 
+    /* ===== SEÇÃO ESPECIAL ALUNOS ===== */
     .alunos-section {
       background: linear-gradient(135deg, #FFF8DC, #FFFDE7);
       padding: 2.2rem 2.5rem 2.8rem;
@@ -496,6 +625,7 @@
       }
     }
 
+    /* ===== SEÇÃO MIKE EMME ===== */
     .mike-section {
       background: linear-gradient(135deg, #FFF8DC, #FFFDE7);
       padding: 2.5rem 2.5rem 2.8rem;
@@ -704,6 +834,7 @@
       }
     }
 
+    /* ===== CARDS PRINCIPAIS ===== */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -779,6 +910,7 @@
       transform: translateY(0);
     }
 
+    /* ===== SEÇÃO NÚMEROS DE EMERGÊNCIA ===== */
     .emergencia-section {
       background: linear-gradient(135deg, #FFF8DC, #FFEECC);
       padding: 2rem 2rem 2.5rem;
@@ -873,6 +1005,7 @@
       transform: scale(1);
     }
 
+    /* ===== SEÇÃO ONGs ===== */
     .ongs-section {
       background: #FFFDF5;
       padding: 2rem 2rem 2.5rem;
@@ -983,6 +1116,7 @@
       opacity: 1;
     }
 
+    /* ===== SEÇÃO DE PESQUISAS ===== */
     .pesquisas-section {
       background: linear-gradient(135deg, #FFF8DC, #FFEECC);
       padding: 2.2rem 2rem 2.8rem;
@@ -1122,6 +1256,7 @@
       opacity: 1;
     }
 
+    /* ===== BOTÃO SURPRESA ===== */
     .surpresa-btn {
       display: inline-block;
       background: var(--dourado);
@@ -1144,6 +1279,7 @@
       color: #2e2416;
     }
 
+    /* ===== MODAL ===== */
     .modal-msg {
       display: none;
       position: fixed;
@@ -1222,6 +1358,7 @@
       font-weight: 500;
     }
 
+    /* ===== CITAÇÃO ===== */
     .quote-block {
       background: #FFF8DC;
       padding: 2rem 2.5rem;
@@ -1289,6 +1426,7 @@
       transform: translateY(0);
     }
 
+    /* ===== RECURSOS ===== */
     .recursos {
       display: flex;
       flex-wrap: wrap;
@@ -1336,60 +1474,120 @@
       transform: scale(1.02);
     }
 
-    .frase-motivacional {
-      background: linear-gradient(135deg, #FFF8DC, #FFFDE7);
+    /* ===== SEÇÃO MOTIVACIONAL FINAL ===== */
+    .motivacional-final {
+      margin-top: 3rem;
       padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, #FFD700, #FFE066);
       border-radius: 60px 16px 60px 16px;
-      margin: 3rem 0 2rem;
-      border: 3px solid var(--dourado);
-      box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
+      border: 4px solid var(--dourado-escuro);
+      box-shadow: var(--sombra-suave);
       text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    .frase-motivacional .icone-fundo {
+    .motivacional-final::before {
+      content: "🌟";
+      position: absolute;
+      left: 20px;
+      top: 20px;
       font-size: 4rem;
-      opacity: 0.06;
+      opacity: 0.15;
+    }
+
+    .motivacional-final::after {
+      content: "💛";
       position: absolute;
       right: 20px;
-      bottom: 0;
-      transform: rotate(-10deg);
+      bottom: 20px;
+      font-size: 4rem;
+      opacity: 0.15;
     }
 
-    .frase-motivacional .emoji-grande {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .frase-motivacional .frase-texto {
-      font-size: 1.8rem;
+    .motivacional-final h2 {
+      font-size: 2.2rem;
       font-weight: 700;
       color: #2e2416;
-      line-height: 1.5;
-      max-width: 850px;
-      margin: 0 auto;
+      margin-bottom: 1rem;
     }
 
-    .frase-motivacional .frase-texto .destaque-dourado {
-      color: var(--dourado-escuro);
-    }
-
-    .frase-motivacional .selo {
-      margin-top: 1.2rem;
-      font-size: 1rem;
+    .motivacional-final .frase-motivacional {
+      font-size: 1.8rem;
+      font-weight: 600;
       color: #2e2416;
-      background: rgba(212, 160, 23, 0.12);
-      display: inline-block;
-      padding: 0.4rem 2rem;
-      border-radius: 40px;
-      border: 2px solid var(--dourado);
-      font-weight: 500;
+      font-style: italic;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
     }
 
-    .frase-motivacional .selo i {
+    .motivacional-final .frase-motivacional i {
       color: var(--dourado-escuro);
     }
+
+    .motivacional-final .integrantes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .motivacional-final .integrantes span {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: 2px solid var(--dourado-escuro);
+      color: #2e2416;
+    }
+
+    .motivacional-final .turma {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dourado-escuro);
+      background: rgba(255, 255, 255, 0.4);
+      display: inline-block;
+      padding: 0.3rem 2rem;
+      border-radius: 40px;
+      border: 2px dashed var(--dourado-escuro);
+    }
+
+    @media (max-width: 650px) {
+      .motivacional-final .frase-motivacional {
+        font-size: 1.3rem;
+      }
+      .motivacional-final h2 {
+        font-size: 1.6rem;
+      }
+      .motivacional-final .integrantes span {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.8rem;
+      }
+      .splash-screen .splash-title {
+        font-size: 2.2rem;
+      }
+      .splash-screen .splash-ribbon {
+        font-size: 4rem;
+      }
+    }
+
+    .setembro-tag {
+      background: var(--dourado);
+      color: #fff;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      border: 1px solid var(--dourado-escuro);
+    }
+
+    .laco-amarelo { color: var(--dourado-escuro); }
+    .sol-icon { color: var(--dourado-escuro); }
 
     .footer {
       margin-top: 4rem;
@@ -1417,35 +1615,18 @@
 
     .footer .autoria {
       background: rgba(212, 160, 23, 0.12);
-      padding: 0.6rem 1.8rem;
+      padding: 0.3rem 1.2rem;
       border-radius: 40px;
       border: 2px solid var(--dourado);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 500;
       color: var(--dourado-escuro);
-      text-align: center;
-      line-height: 1.8;
-      max-width: 600px;
     }
 
     .footer .autoria i {
       color: var(--dourado-escuro);
       margin-right: 6px;
     }
-
-    .setembro-tag {
-      background: var(--dourado);
-      color: #fff;
-      padding: 0.2rem 1.2rem;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: inline-block;
-      border: 1px solid var(--dourado-escuro);
-    }
-
-    .laco-amarelo { color: var(--dourado-escuro); }
-    .sol-icon { color: var(--dourado-escuro); }
 
     @media (max-width: 650px) {
       .header h1 { font-size: 2.3rem; }
@@ -1461,421 +1642,469 @@
       .modal-content { margin: 1rem; padding: 1.8rem; }
       .alunos-section, .mensagens-apoio { padding: 1.5rem; }
       .alunos-section .alunos-grid .ano-card { padding: 1.2rem; }
-      .footer .autoria { font-size: 0.75rem; padding: 0.4rem 1rem; line-height: 1.6; }
-      .frase-motivacional .frase-texto { font-size: 1.3rem; }
+      .footer .autoria { font-size: 0.75rem; padding: 0.2rem 0.8rem; }
     }
 
     html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <h1>
-        <i class="fas fa-school"></i> 
-        Saúde Mental nas Escolas
-      </h1>
-      <p><i class="fas fa-phone-volume" style="margin-right: 10px;"></i> Apoio, pesquisas e números que salvam vidas</p>
-    </header>
-
-    <div class="setembro-banner">
-      <div class="laco">
-        <i class="fas fa-ribbon"></i>
-      </div>
-      <div class="texto-banner">
-        <h2><i class="fas fa-sun sol-icon" style="margin-right: 8px;"></i> Setembro Amarelo</h2>
-        <p><span class="destaque">💛 Setembro é o mês da prevenção ao suicídio</span></p>
-        <p style="margin-top: 0.2rem;">Falar é a melhor solução. <span class="setembro-tag"><i class="fas fa-phone"></i> 188</span></p>
-      </div>
-      <div style="font-size: 2.8rem; opacity: 0.3;">
-        <i class="fas fa-sun sol-icon"></i>
-      </div>
-      <div class="banner-hidden-msg">💛 "Você é mais forte do que imagina. Peça ajuda."</div>
+  <!-- ===== ABERTURA ANIMADA ===== -->
+  <div class="splash-screen" id="splashScreen">
+    <div class="splash-coracao">💛</div>
+    <div class="splash-coracao">💛</div>
+    <div class="splash-coracao">💛</div>
+    <div class="splash-coracao">💛</div>
+    <div class="splash-coracao">💛</div>
+    <div class="splash-ribbon">
+      <i class="fas fa-ribbon"></i>
     </div>
-
-    <section class="mensagens-apoio">
-      <div class="apoio-header">
-        <div class="apoio-icon">
-          <i class="fas fa-heart"></i>
-        </div>
-        <div>
-          <h2>Mensagens de <span>Apoio</span></h2>
-          <div class="alunos-sub" style="margin-bottom: 0; border: 2px dashed var(--dourado); background: rgba(212,160,23,0.08); padding: 0.3rem 1.2rem; border-radius: 40px; display: inline-block; font-weight: 500; font-size: 0.95rem;">
-            <i class="fas fa-star" style="color: var(--dourado-escuro);"></i> Para adultos e alunos
-          </div>
-        </div>
-      </div>
-
-      <div class="apoio-grid">
-        <div class="grupo-msg">
-          <span class="grupo-tag"><i class="fas fa-graduation-cap"></i> Alunos</span>
-          <h3><i class="fas fa-lightbulb"></i> Para você que está na escola</h3>
-          <ul class="msg-lista">
-            <li>"Você não precisa ter todas as respostas agora. Cada passo que você dá já é uma conquista." <span class="autor-msg">— Para quem está no 1º ano</span></li>
-            <li>"O vestibular não define quem você é. Sua história, sua essência e sua resiliência são muito maiores que uma nota." <span class="autor-msg">— Para quem está no 3º ano</span></li>
-            <li>"É normal sentir medo, ansiedade e incerteza. O que importa é que você continue seguindo em frente, mesmo devagar." <span class="autor-msg">— Para todos os alunos</span></li>
-            <li>"Você é mais forte do que imagina. E não está sozinho(a) — peça ajuda quando precisar." <span class="autor-msg">— Mensagem de apoio</span></li>
-            <li>"Cada dia é uma nova oportunidade para recomeçar. Não desista de você." <span class="autor-msg">— Inspire-se</span></li>
-          </ul>
-        </div>
-
-        <div class="grupo-msg">
-          <span class="grupo-tag"><i class="fas fa-users"></i> Adultos</span>
-          <h3><i class="fas fa-heart"></i> Para pais, professores e educadores</h3>
-          <ul class="msg-lista">
-            <li>"Cuidar da sua saúde mental não é egoísmo — é essencial para que você possa cuidar dos outros." <span class="autor-msg">— Para pais e mães</span></li>
-            <li>"Os alunos aprendem não só com o que você ensina, mas com quem você é. Cuide de si para ser um exemplo de bem-estar." <span class="autor-msg">— Para professores</span></li>
-            <li>"A escuta ativa e o acolhimento são as ferramentas mais poderosas que você pode oferecer a um jovem." <span class="autor-msg">— Para educadores</span></li>
-            <li>"Não se cobre tanto. Você está fazendo o melhor que pode com as ferramentas que tem." <span class="autor-msg">— Para todos os adultos</span></li>
-            <li>"Sua presença e seu apoio fazem mais diferença do que você imagina na vida de um aluno." <span class="autor-msg">— Mensagem de reconhecimento</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="alunos-section">
-      <div class="alunos-header">
-        <div class="alunos-icon">
-          <i class="fas fa-graduation-cap"></i>
-        </div>
-        <div>
-          <h2>Saúde Mental no <span>Ensino Médio</span></h2>
-          <div class="alunos-sub"><i class="fas fa-star" style="color: var(--dourado-escuro);"></i> Foco especial no 1º e 3º ano</div>
-        </div>
-      </div>
-
-      <div class="alunos-grid">
-        <div class="ano-card">
-          <span class="ano-tag">1º Ano</span>
-          <h3><i class="fas fa-rocket"></i> Adaptação e Novos Começos</h3>
-          <p class="ano-desc">O primeiro ano do ensino médio é marcado por mudanças intensas: nova escola, novos colegas, novos desafios acadêmicos e a pressão de um futuro que começa a se desenhar.</p>
-          <ul class="ano-lista">
-            <li><strong>Desafios comuns:</strong> Ansiedade de adaptação, medo de não se encaixar, sobrecarga com novas matérias.</li>
-            <li><strong>Como cuidar:</strong> Crie novas rotinas, participe de atividades extracurriculares, converse com colegas e professores.</li>
-            <li><strong>Dica:</strong> Permita-se errar. O primeiro ano é um período de descoberta, não de perfeição.</li>
-          </ul>
-        </div>
-
-        <div class="ano-card">
-          <span class="ano-tag">3º Ano</span>
-          <h3><i class="fas fa-hourglass-half"></i> Pressão e Despedidas</h3>
-          <p class="ano-desc">O terceiro ano é o auge da pressão: vestibular, ENEM, escolha profissional, além da despedida da escola e dos amigos que podem seguir caminhos diferentes.</p>
-          <ul class="ano-lista">
-            <li><strong>Desafios comuns:</strong> Síndrome do pânico pré-vestibular, crise existencial, medo do futuro, luto da despedida.</li>
-            <li><strong>Como cuidar:</strong> Equilibre os estudos com momentos de lazer, durma bem, compartilhe suas angústias com amigos e familiares.</li>
-            <li><strong>Dica:</strong> O vestibular não define quem você é. Você é muito mais do que uma nota.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="alunos-dicas">
-        <h4><i class="fas fa-lightbulb" style="color: var(--dourado-escuro);"></i> Dicas para todos os alunos</h4>
-        <p>💛 A saúde mental não é um luxo, é uma necessidade. Cuidar da mente é tão importante quanto estudar para as provas.</p>
-        <div class="dicas-tags">
-          <span>🧘 Respire fundo</span>
-          <span>🗣️ Converse com alguém</span>
-          <span>📝 Escreva seus sentimentos</span>
-          <span>🎧 Ouça música</span>
-          <span>🚶 Dê uma caminhada</span>
-          <span>💤 Durma bem</span>
-          <span>📱 Desconecte-se</span>
-        </div>
-        <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #2e2416;">
-          <i class="fas fa-ribbon laco-amarelo"></i> Se você está passando por um momento difícil, não hesite em pedir ajuda. Ligue 188 ou converse com o psicólogo da sua escola.
-        </p>
-      </div>
-    </section>
-
-    <section class="mike-section">
-      <div class="mike-header">
-        <div class="mike-icon">
-          <i class="fas fa-ribbon"></i>
-        </div>
-        <div>
-          <h2>Mike Emme <span>💛</span></h2>
-          <div class="mike-sub"><i class="fas fa-star" style="color: var(--dourado-escuro);"></i> A história que deu origem ao Setembro Amarelo</div>
-        </div>
-      </div>
-
-      <div class="mike-historia">
-        <h3><i class="fas fa-car" style="color: var(--dourado-escuro);"></i> Como começou o movimento?</h3>
-        <p><strong>Mike Emme</strong> era um jovem de 17 anos, apaixonado por carros e mecânica. Em 1994, ele restaurou um Ford Mustang 1968 e o pintou de amarelo vibrante. Ficou conhecido como <strong>"Mustang Mike"</strong> entre seus amigos.</p>
-        
-        <p>Infelizmente, em 8 de setembro de 1994, Mike faleceu por suicídio. Sua morte chocou a comunidade e deixou sua família devastada.</p>
-        
-        <div class="destaque-historia">
-          <i class="fas fa-heart" style="color: var(--dourado-escuro);"></i> 
-          <strong>O legado de Mike:</strong> Seus pais, Dale e Darlene Emme, transformaram a dor em ação. No funeral, distribuíram cartões com fitas amarelas e a mensagem: 
-          <em>"Se você precisar, peça ajuda"</em>. Esse gesto simples, mas poderoso, deu origem ao <strong>Yellow Ribbon Suicide Prevention Program</strong>.
-        </div>
-
-        <p>O movimento se espalhou pelos Estados Unidos e pelo mundo. Em 2003, a Organização Mundial da Saúde (OMS) criou o <strong>Dia Mundial de Prevenção ao Suicídio</strong>, celebrado em 10 de setembro.</p>
-
-        <p><strong>No Brasil:</strong> Em 2015, a Associação Brasileira de Psiquiatria (ABP), o Conselho Federal de Medicina (CFM) e o Centro de Valorização da Vida (CVV) trouxeram a campanha ao Brasil, criando o <strong>Setembro Amarelo</strong>.</p>
-
-        <div class="destaque-historia" style="background: rgba(255, 215, 0, 0.1); border-left-color: var(--amarelo-queimado);">
-          <i class="fas fa-ribbon" style="color: var(--dourado-escuro);"></i>
-          <strong>A importância de Mike Emme:</strong> Sua história nos lembra que <strong>falar sobre saúde mental pode salvar vidas</strong>. O amarelo do Mustang se tornou símbolo de esperança e prevenção no mundo inteiro.
-        </div>
-      </div>
-
-      <div class="mike-grid">
-        <div class="mike-card">
-          <h4><i class="fas fa-car" style="color: var(--dourado-escuro);"></i> O Mustang Amarelo</h4>
-          <p>Mike restaurou um Ford Mustang 1968 e o pintou de amarelo, que se tornou o símbolo da campanha mundial de prevenção ao suicídio.</p>
-        </div>
-        <div class="mike-card">
-          <h4><i class="fas fa-heart" style="color: var(--dourado-escuro);"></i> O Legado</h4>
-          <p>Os cartões com fitas amarelas distribuídos pelos pais de Mike deram origem ao Yellow Ribbon Suicide Prevention Program.</p>
-        </div>
-        <div class="mike-card">
-          <h4><i class="fas fa-globe-americas" style="color: var(--dourado-escuro);"></i> Impacto Global</h4>
-          <p>O movimento se espalhou pelos Estados Unidos e pelo mundo. O Yellow Ribbon Program já salvou milhares de vidas.</p>
-        </div>
-        <div class="mike-card">
-          <h4><i class="fas fa-flag" style="color: var(--dourado-escuro);"></i> No Brasil</h4>
-          <p>Em 2015, a ABP, o CFM e o CVV trouxeram a campanha ao Brasil, criando o Setembro Amarelo.</p>
-        </div>
-      </div>
-
-      <div class="mike-links">
-        <h4><i class="fas fa-link" style="color: var(--dourado-escuro);"></i> Saiba mais sobre a história de Mike Emme</h4>
-        <ul>
-          <li><a href="https://g1.globo.com/saude/saude-mental/noticia/2024/09/10/setembro-amarelo-pais-de-jovem-que-deu-origem-a-campanha-contam-que-dor-nao-tem-fim-e-alertam-se-precisar-peca-ajuda.ghtml" target="_blank" rel="noopener noreferrer">Entrevista com os pais de Mike Emme - G1</a></li>
-          <li><a href="https://yellowribbon.org/" target="_blank" rel="noopener noreferrer">Site oficial do Yellow Ribbon Suicide Prevention Program</a></li>
-          <li><a href="https://www.setembroamarelo.com.br/" target="_blank" rel="noopener noreferrer">Setembro Amarelo Brasil - Site oficial</a></li>
-          <li><a href="https://www.abp.org.br/" target="_blank" rel="noopener noreferrer">Associação Brasileira de Psiquiatria (ABP)</a></li>
-        </ul>
-      </div>
-
-      <div class="mike-legado">
-        <i class="fas fa-quote-left"></i> 
-        "O amarelo do Mustang de Mike se tornou símbolo de esperança e prevenção no mundo inteiro. Sua história nos lembra que falar sobre saúde mental pode salvar vidas."
-        <div style="margin-top: 0.5rem; font-style: normal; font-weight: 500; font-size: 0.9rem; color: var(--dourado-escuro);">
-          — Legado de Mike Emme, 1994
-        </div>
-      </div>
-    </section>
-
-    <div class="cards-grid">
-      <div class="card">
-        <i class="fas fa-heart-circle-check"></i>
-        <h3>🧘 Autocuidado</h3>
-        <p>Pequenas pausas, respiração consciente e momentos de silêncio ajudam a restaurar o equilíbrio emocional.</p>
-        <div class="card-hidden-msg">✨ "Cuide de você primeiro."</div>
-      </div>
-      <div class="card">
-        <i class="fas fa-hand-holding-heart"></i>
-        <h3>Apoio</h3>
-        <p>Conversar com amigos, familiares ou profissionais é essencial. Você não precisa passar por isso sozinho.</p>
-        <div class="card-hidden-msg">🤝 "Você não está sozinho."</div>
-      </div>
-      <div class="card">
-        <i class="fas fa-feather-pointed"></i>
-        <h3>Leveza</h3>
-        <p>Permita-se sentir, sem julgamento. A saúde mental floresce quando acolhemos nossas emoções.</p>
-        <div class="card-hidden-msg">🍃 "Acolha suas emoções."</div>
-      </div>
+    <div class="splash-title">
+      Setembro <span>Amarelo</span>
     </div>
-
-    <section class="emergencia-section">
-      <h2><i class="fas fa-phone"></i> Números de apoio 24h <span style="font-size: 1.2rem; margin-left: 8px;"><i class="fas fa-ribbon laco-amarelo"></i></span></h2>
-      <div class="emergencia-grid">
-        <div class="numero-card">
-          <div class="num">188</div>
-          <div class="desc">CVV – Centro de Valorização da Vida</div>
-          <div class="small-desc">Atendimento gratuito, sigiloso e 24h</div>
-          <div class="num-hidden-msg">💛 Ligue, você importa</div>
-        </div>
-        <div class="numero-card">
-          <div class="num">190</div>
-          <div class="desc">Polícia Militar</div>
-          <div class="small-desc">Emergências e situações de risco</div>
-          <div class="num-hidden-msg">🛡️ Sua segurança em primeiro lugar</div>
-        </div>
-        <div class="numero-card">
-          <div class="num">192</div>
-          <div class="desc">SAMU</div>
-          <div class="small-desc">Serviço de Atendimento Móvel de Urgência</div>
-          <div class="num-hidden-msg">🚑 Socorro sempre disponível</div>
-        </div>
-        <div class="numero-card">
-          <div class="num">100</div>
-          <div class="desc">Disque Direitos Humanos</div>
-          <div class="small-desc">Denúncias e orientação sobre violações</div>
-          <div class="num-hidden-msg">⚖️ Seus direitos importam</div>
-        </div>
-      </div>
-      <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #2e2416; text-align: center; background: rgba(255,248,220,0.5); padding: 0.6rem; border-radius: 60px; border: 2px dashed var(--dourado);">
-        <i class="fas fa-ribbon laco-amarelo" style="margin-right: 6px;"></i> Ligue: você não está sozinho(a). Todos os serviços são gratuitos e confidenciais. <i class="fas fa-sun sol-icon" style="margin-left: 6px;"></i>
-      </p>
-    </section>
-
-    <section class="ongs-section">
-      <h2><i class="fas fa-hand-holding-heart"></i> ONGs de apoio à saúde mental <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px; font-size: 1.8rem;"></i></h2>
-      <div class="ongs-grid">
-        <a href="https://www.cvv.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-phone-alt"></i></div>
-          <h3>💛 CVV</h3>
-          <div class="ong-desc">Centro de Valorização da Vida – apoio emocional e prevenção ao suicídio.</div>
-          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">💛 "Sua vida tem valor"</div>
-        </a>
-        <a href="https://www.abrata.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-hands-helping"></i></div>
-          <h3>🤗 ABRATA</h3>
-          <div class="ong-desc">Associação Brasileira de Familiares de Pessoas com Transtornos Mentais – acolhimento e orientação.</div>
-          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">🤗 "Família que acolhe"</div>
-        </a>
-        <a href="https://www.setembroamarelo.com.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-ribbon"></i></div>
-          <h3>💛 Setembro Amarelo Brasil</h3>
-          <div class="ong-desc">Campanha oficial de prevenção ao suicídio no Brasil.</div>
-          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">💛 "Falar é a melhor solução"</div>
-        </a>
-        <a href="https://www.mapeamentosaudemental.com.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-map-signs"></i></div>
-          <h3>📍 Mapeamento Saúde Mental</h3>
-          <div class="ong-desc">Plataforma para encontrar psicólogos e serviços de saúde mental próximos a você.</div>
-          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">📍 "Encontre ajuda perto de você"</div>
-        </a>
-        <a href="https://casadeapoio.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-home-heart"></i></div>
-          <h3>🏠 Casa de Apoio Viver</h3>
-          <div class="ong-desc">Projeto de acolhimento e reinserção social para pessoas em sofrimento psíquico.</div>
-          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">🏠 "Um recomeço possível"</div>
-        </a>
-        <a href="https://projetoanima.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
-          <div class="ong-icon"><i class="fas fa-seedling"></i></div>
-          <h3>🌱 Projeto Ânima</h3>
-          <div class="ong-desc">Saúde mental para jovens com rodas de conversa, terapia comunitária e suporte emocional.</div>
-          <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
-          <div class="ong-hidden-msg">🌱 "Cuidando da sua mente"</div>
-        </a>
-      </div>
-    </section>
-
-    <section class="pesquisas-section">
-      <h2><i class="fas fa-microscope"></i> Pesquisas em destaque <i class="fas fa-sun sol-icon" style="margin-left: 8px; font-size: 1.8rem;"></i></h2>
-      <div class="pesquisas-grid">
-        <a href="https://www.who.int/news-room/fact-sheets/detail/mental-disorders" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
-          <div class="icone-pesq"><i class="fas fa-globe-americas"></i></div>
-          <h3>🌍 OMS · Transtornos mentais</h3>
-          <span class="fonte"><i class="far fa-file-alt"></i> Organização Mundial da Saúde</span>
-          <p>Dados globais sobre prevalência de depressão, ansiedade e impacto na saúde pública.</p>
-          <span class="seta">Acessar pesquisa →</span>
-          <div class="pesquisa-hidden-msg">📊 "Conhecimento salva vidas"</div>
-        </a>
-        <a href="https://www.revistas.usp.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
-          <div class="icone-pesq"><i class="fas fa-university"></i></div>
-          <h3>🎓 USP · Saúde mental juvenil</h3>
-          <span class="fonte"><i class="far fa-file-alt"></i> Universidade de São Paulo</span>
-          <p>Pesquisas sobre ansiedade e depressão entre adolescentes brasileiros.</p>
-          <span class="seta">Acessar pesquisa →</span>
-          <div class="pesquisa-hidden-msg">🧑‍🎓 "Juventude e saúde mental"</div>
-        </a>
-        <a href="https://portal.fiocruz.br/noticia/saude-mental-e-importante-para-o-bem-estar-dos-trabalhadores" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
-          <div class="icone-pesq"><i class="fas fa-brazil"></i></div>
-          <h3>🔬 Fiocruz · Saúde e trabalho</h3>
-          <span class="fonte"><i class="far fa-file-alt"></i> Fundação Oswaldo Cruz</span>
-          <p>Impacto do ambiente laboral na saúde mental dos trabalhadores brasileiros.</p>
-          <span class="seta">Acessar pesquisa →</span>
-          <div class="pesquisa-hidden-msg">👷 "Trabalho com saúde mental"</div>
-        </a>
-        <a href="https://www.scielo.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
-          <div class="icone-pesq"><i class="fas fa-book-open"></i></div>
-          <h3>📚 SciELO · Saúde mental Brasil</h3>
-          <span class="fonte"><i class="far fa-file-alt"></i> Scientific Electronic Library Online</span>
-          <p>Artigos científicos sobre saúde mental, depressão e ansiedade no Brasil.</p>
-          <span class="seta">Acessar pesquisa →</span>
-          <div class="pesquisa-hidden-msg">📚 "Ciência brasileira"</div>
-        </a>
-        <a href="https://www.abp.org.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
-          <div class="icone-pesq"><i class="fas fa-psychiatry"></i></div>
-          <h3>🧠 ABP · Diretrizes brasileiras</h3>
-          <span class="fonte"><i class="far fa-file-alt"></i> Associação Brasileira de Psiquiatria</span>
-          <p>Diretrizes e pesquisas sobre tratamento de transtornos mentais no Brasil.</p>
-          <span class="seta">Acessar pesquisa →</span>
-          <div class="pesquisa-hidden-msg">🧠 "Referência nacional"</div>
-        </a>
-        <a href="https://www.revista.ufpe.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
-          <div class="icone-pesq"><i class="fas fa-graduation-cap"></i></div>
-          <h3>📖 UFPE · Ansiedade escolar</h3>
-          <span class="fonte"><i class="far fa-file-alt"></i> Universidade Federal de Pernambuco</span>
-          <p>Estudos sobre ansiedade e desempenho escolar em adolescentes brasileiros.</p>
-          <span class="seta">Acessar pesquisa →</span>
-          <div class="pesquisa-hidden-msg">📖 "Pesquisa acadêmica"</div>
-        </a>
-      </div>
-      <p style="margin-top: 1.8rem; font-size: 0.95rem; color: #2e2416; text-align: center; background: rgba(255,248,220,0.5); padding: 0.6rem; border-radius: 60px; border: 2px dashed var(--dourado);">
-        <i class="fas fa-hand-pointer" style="color: var(--dourado-escuro);"></i> Clique em qualquer balão para acessar as pesquisas
-      </p>
-    </section>
-
-    <div class="quote-block">
-      <blockquote>
-        <i class="fas fa-quote-left"></i> 
-        "A saúde mental é um estado de bem-estar no qual o indivíduo percebe as suas próprias capacidades, pode lidar com o estresse da vida, trabalhar de forma produtiva e contribuir para a sua comunidade."
-        <span>— OMS</span>
-      </blockquote>
-      <div class="autor"><i class="fas fa-angles-right" style="color: var(--dourado-escuro);"></i> Organização Mundial da Saúde <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px;"></i></div>
-      <div class="quote-hidden-msg">🌻 "Você tem um propósito único."</div>
+    <div class="splash-sub">
+      <i class="fas fa-heart" style="color: var(--dourado-escuro);"></i> 
+      Saúde Mental nas Escolas 
+      <i class="fas fa-heart" style="color: var(--dourado-escuro);"></i>
     </div>
-
-    <div style="display: flex; justify-content: center; margin: 1rem 0 0.5rem;">
-      <button class="surpresa-btn" id="surpresaBtn">
-        <i class="fas fa-star" style="margin-right: 8px;"></i> Clique para uma mensagem especial
-      </button>
+    <div class="splash-loader">
+      <div class="loader-bar"></div>
     </div>
-
-    <div class="recursos">
-      <div class="info">
-        <h4><i class="fas fa-phone-volume" style="color: var(--dourado-escuro); margin-right: 8px;"></i> Apoio disponível <i class="fas fa-ribbon laco-amarelo" style="margin-left: 6px;"></i></h4>
-        <p><i class="fas fa-circle" style="color: var(--dourado-escuro); font-size: 0.6rem; vertical-align: middle;"></i> Ligue para o CVV: 188 (24h) · chat online</p>
-        <p style="font-size: 0.9rem; opacity: 0.8;"><i class="fas fa-clock"></i> Atendimento gratuito e sigiloso</p>
-      </div>
-      <div class="btn" id="apoioBtn">
-        <i class="fas fa-arrow-right"></i> Central de ajuda
-      </div>
+    <div style="margin-top: 1rem; font-size: 0.9rem; color: #2e2416; opacity: 0.6;">
+      <i class="fas fa-ribbon laco-amarelo"></i> Sua vida importa 💛
     </div>
-
-    <!-- FRASE MOTIVACIONAL FINAL -->
-    <div class="frase-motivacional">
-      <div class="icone-fundo">💛</div>
-      <div class="emoji-grande">🌻</div>
-      <p class="frase-texto">
-        "O sucesso é a soma de pequenos esforços repetidos dia após dia.
-        <br>Acredite no seu potencial, porque dentro de você existe uma força
-        <br>capaz de transformar qualquer sonho em realidade.
-        <br><span class="destaque-dourado">Nunca desista, pois a jornada é tão valiosa quanto a conquista!</span>"
-      </p>
-      <div class="selo">
-        <i class="fas fa-ribbon laco-amarelo"></i> Setembro Amarelo · Prevenção sempre
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="simbolo">
-        <i class="fas fa-circle" style="color: var(--dourado-escuro);"></i>
-        <i class="fas fa-circle" style="color: #FFF8DC; text-shadow: 0 0 0 var(--dourado-escuro);"></i>
-        <i class="fas fa-circle" style="color: var(--dourado-escuro);"></i>
-        <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px;"></i>
-      </div>
-      <div>
-        <small>© 2026 · Saúde Mental nas Escolas</small>
-      </div>
-      <div class="autoria">
-        <i class="fas fa-graduation-cap"></i>
-        <strong>Este trabalho foi realizado pelos alunos do 1º B de Informática:</strong><br>
-        Eshila Fernanda · Marina Alves · Davi Ferreira · Victória Régia · Pedro Lucas Lopes · Emily Diogo · Lorena Teixeira
-      </div>
-    </footer>
   </div>
 
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <div class="main-content">
+    <div class="container">
+      <header class="header">
+        <h1>
+          <i class="fas fa-school"></i> 
+          Saúde Mental nas Escolas
+        </h1>
+        <p><i class="fas fa-phone-volume" style="margin-right: 10px;"></i> Apoio, pesquisas e números que salvam vidas</p>
+      </header>
+
+      <div class="setembro-banner">
+        <div class="laco">
+          <i class="fas fa-ribbon"></i>
+        </div>
+        <div class="texto-banner">
+          <h2><i class="fas fa-sun sol-icon" style="margin-right: 8px;"></i> Setembro Amarelo</h2>
+          <p><span class="destaque">💛 Setembro é o mês da prevenção ao suicídio</span></p>
+          <p style="margin-top: 0.2rem;">Falar é a melhor solução. <span class="setembro-tag"><i class="fas fa-phone"></i> 188</span></p>
+        </div>
+        <div style="font-size: 2.8rem; opacity: 0.3;">
+          <i class="fas fa-sun sol-icon"></i>
+        </div>
+        <div class="banner-hidden-msg">💛 "Você é mais forte do que imagina. Peça ajuda."</div>
+      </div>
+
+      <section class="mensagens-apoio">
+        <div class="apoio-header">
+          <div class="apoio-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div>
+            <h2>Mensagens de <span>Apoio</span></h2>
+            <div class="alunos-sub" style="margin-bottom: 0; border: 2px dashed var(--dourado); background: rgba(212,160,23,0.08); padding: 0.3rem 1.2rem; border-radius: 40px; display: inline-block; font-weight: 500; font-size: 0.95rem;">
+              <i class="fas fa-star" style="color: var(--dourado-escuro);"></i> Para adultos e alunos
+            </div>
+          </div>
+        </div>
+
+        <div class="apoio-grid">
+          <div class="grupo-msg">
+            <span class="grupo-tag"><i class="fas fa-graduation-cap"></i> Alunos</span>
+            <h3><i class="fas fa-lightbulb"></i> Para você que está na escola</h3>
+            <ul class="msg-lista">
+              <li>"Você não precisa ter todas as respostas agora. Cada passo que você dá já é uma conquista." <span class="autor-msg">— Para quem está no 1º ano</span></li>
+              <li>"O vestibular não define quem você é. Sua história, sua essência e sua resiliência são muito maiores que uma nota." <span class="autor-msg">— Para quem está no 3º ano</span></li>
+              <li>"É normal sentir medo, ansiedade e incerteza. O que importa é que você continue seguindo em frente, mesmo devagar." <span class="autor-msg">— Para todos os alunos</span></li>
+              <li>"Você é mais forte do que imagina. E não está sozinho(a) — peça ajuda quando precisar." <span class="autor-msg">— Mensagem de apoio</span></li>
+              <li>"Cada dia é uma nova oportunidade para recomeçar. Não desista de você." <span class="autor-msg">— Inspire-se</span></li>
+            </ul>
+          </div>
+
+          <div class="grupo-msg">
+            <span class="grupo-tag"><i class="fas fa-users"></i> Adultos</span>
+            <h3><i class="fas fa-heart"></i> Para pais, professores e educadores</h3>
+            <ul class="msg-lista">
+              <li>"Cuidar da sua saúde mental não é egoísmo — é essencial para que você possa cuidar dos outros." <span class="autor-msg">— Para pais e mães</span></li>
+              <li>"Os alunos aprendem não só com o que você ensina, mas com quem você é. Cuide de si para ser um exemplo de bem-estar." <span class="autor-msg">— Para professores</span></li>
+              <li>"A escuta ativa e o acolhimento são as ferramentas mais poderosas que você pode oferecer a um jovem." <span class="autor-msg">— Para educadores</span></li>
+              <li>"Não se cobre tanto. Você está fazendo o melhor que pode com as ferramentas que tem." <span class="autor-msg">— Para todos os adultos</span></li>
+              <li>"Sua presença e seu apoio fazem mais diferença do que você imagina na vida de um aluno." <span class="autor-msg">— Mensagem de reconhecimento</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="alunos-section">
+        <div class="alunos-header">
+          <div class="alunos-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h2>Saúde Mental no <span>Ensino Médio</span></h2>
+            <div class="alunos-sub"><i class="fas fa-star" style="color: var(--dourado-escuro);"></i> Foco especial no 1º e 3º ano</div>
+          </div>
+        </div>
+
+        <div class="alunos-grid">
+          <div class="ano-card">
+            <span class="ano-tag">1º Ano</span>
+            <h3><i class="fas fa-rocket"></i> Adaptação e Novos Começos</h3>
+            <p class="ano-desc">O primeiro ano do ensino médio é marcado por mudanças intensas: nova escola, novos colegas, novos desafios acadêmicos e a pressão de um futuro que começa a se desenhar.</p>
+            <ul class="ano-lista">
+              <li><strong>Desafios comuns:</strong> Ansiedade de adaptação, medo de não se encaixar, sobrecarga com novas matérias.</li>
+              <li><strong>Como cuidar:</strong> Crie novas rotinas, participe de atividades extracurriculares, converse com colegas e professores.</li>
+              <li><strong>Dica:</strong> Permita-se errar. O primeiro ano é um período de descoberta, não de perfeição.</li>
+            </ul>
+          </div>
+
+          <div class="ano-card">
+            <span class="ano-tag">3º Ano</span>
+            <h3><i class="fas fa-hourglass-half"></i> Pressão e Despedidas</h3>
+            <p class="ano-desc">O terceiro ano é o auge da pressão: vestibular, ENEM, escolha profissional, além da despedida da escola e dos amigos que podem seguir caminhos diferentes.</p>
+            <ul class="ano-lista">
+              <li><strong>Desafios comuns:</strong> Síndrome do pânico pré-vestibular, crise existencial, medo do futuro, luto da despedida.</li>
+              <li><strong>Como cuidar:</strong> Equilibre os estudos com momentos de lazer, durma bem, compartilhe suas angústias com amigos e familiares.</li>
+              <li><strong>Dica:</strong> O vestibular não define quem você é. Você é muito mais do que uma nota.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="alunos-dicas">
+          <h4><i class="fas fa-lightbulb" style="color: var(--dourado-escuro);"></i> Dicas para todos os alunos</h4>
+          <p>💛 A saúde mental não é um luxo, é uma necessidade. Cuidar da mente é tão importante quanto estudar para as provas.</p>
+          <div class="dicas-tags">
+            <span>🧘 Respire fundo</span>
+            <span>🗣️ Converse com alguém</span>
+            <span>📝 Escreva seus sentimentos</span>
+            <span>🎧 Ouça música</span>
+            <span>🚶 Dê uma caminhada</span>
+            <span>💤 Durma bem</span>
+            <span>📱 Desconecte-se</span>
+          </div>
+          <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #2e2416;">
+            <i class="fas fa-ribbon laco-amarelo"></i> Se você está passando por um momento difícil, não hesite em pedir ajuda. Ligue 188 ou converse com o psicólogo da sua escola.
+          </p>
+        </div>
+      </section>
+
+      <section class="mike-section">
+        <div class="mike-header">
+          <div class="mike-icon">
+            <i class="fas fa-ribbon"></i>
+          </div>
+          <div>
+            <h2>Mike Emme <span>💛</span></h2>
+            <div class="mike-sub"><i class="fas fa-star" style="color: var(--dourado-escuro);"></i> A história que deu origem ao Setembro Amarelo</div>
+          </div>
+        </div>
+
+        <div class="mike-historia">
+          <h3><i class="fas fa-car" style="color: var(--dourado-escuro);"></i> Como começou o movimento?</h3>
+          <p><strong>Mike Emme</strong> era um jovem de 17 anos, apaixonado por carros e mecânica. Em 1994, ele restaurou um Ford Mustang 1968 e o pintou de amarelo vibrante. Ficou conhecido como <strong>"Mustang Mike"</strong> entre seus amigos.</p>
+          
+          <p>Infelizmente, em 8 de setembro de 1994, Mike faleceu por suicídio. Sua morte chocou a comunidade e deixou sua família devastada.</p>
+          
+          <div class="destaque-historia">
+            <i class="fas fa-heart" style="color: var(--dourado-escuro);"></i> 
+            <strong>O legado de Mike:</strong> Seus pais, Dale e Darlene Emme, transformaram a dor em ação. No funeral, distribuíram cartões com fitas amarelas e a mensagem: 
+            <em>"Se você precisar, peça ajuda"</em>. Esse gesto simples, mas poderoso, deu origem ao <strong>Yellow Ribbon Suicide Prevention Program</strong>.
+          </div>
+
+          <p>O movimento se espalhou pelos Estados Unidos e pelo mundo. Em 2003, a Organização Mundial da Saúde (OMS) criou o <strong>Dia Mundial de Prevenção ao Suicídio</strong>, celebrado em 10 de setembro.</p>
+
+          <p><strong>No Brasil:</strong> Em 2015, a Associação Brasileira de Psiquiatria (ABP), o Conselho Federal de Medicina (CFM) e o Centro de Valorização da Vida (CVV) trouxeram a campanha ao Brasil, criando o <strong>Setembro Amarelo</strong>.</p>
+
+          <div class="destaque-historia" style="background: rgba(255, 215, 0, 0.1); border-left-color: var(--amarelo-queimado);">
+            <i class="fas fa-ribbon" style="color: var(--dourado-escuro);"></i>
+            <strong>A importância de Mike Emme:</strong> Sua história nos lembra que <strong>falar sobre saúde mental pode salvar vidas</strong>. O amarelo do Mustang se tornou símbolo de esperança e prevenção no mundo inteiro.
+          </div>
+        </div>
+
+        <div class="mike-grid">
+          <div class="mike-card">
+            <h4><i class="fas fa-car" style="color: var(--dourado-escuro);"></i> O Mustang Amarelo</h4>
+            <p>Mike restaurou um Ford Mustang 1968 e o pintou de amarelo, que se tornou o símbolo da campanha mundial de prevenção ao suicídio.</p>
+          </div>
+          <div class="mike-card">
+            <h4><i class="fas fa-heart" style="color: var(--dourado-escuro);"></i> O Legado</h4>
+            <p>Os cartões com fitas amarelas distribuídos pelos pais de Mike deram origem ao Yellow Ribbon Suicide Prevention Program.</p>
+          </div>
+          <div class="mike-card">
+            <h4><i class="fas fa-globe-americas" style="color: var(--dourado-escuro);"></i> Impacto Global</h4>
+            <p>O movimento se espalhou pelos Estados Unidos e pelo mundo. O Yellow Ribbon Program já salvou milhares de vidas.</p>
+          </div>
+          <div class="mike-card">
+            <h4><i class="fas fa-flag" style="color: var(--dourado-escuro);"></i> No Brasil</h4>
+            <p>Em 2015, a ABP, o CFM e o CVV trouxeram a campanha ao Brasil, criando o Setembro Amarelo.</p>
+          </div>
+        </div>
+
+        <div class="mike-links">
+          <h4><i class="fas fa-link" style="color: var(--dourado-escuro);"></i> Saiba mais sobre a história de Mike Emme</h4>
+          <ul>
+            <li><a href="https://g1.globo.com/saude/saude-mental/noticia/2024/09/10/setembro-amarelo-pais-de-jovem-que-deu-origem-a-campanha-contam-que-dor-nao-tem-fim-e-alertam-se-precisar-peca-ajuda.ghtml" target="_blank" rel="noopener noreferrer">Entrevista com os pais de Mike Emme - G1</a></li>
+            <li><a href="https://yellowribbon.org/" target="_blank" rel="noopener noreferrer">Site oficial do Yellow Ribbon Suicide Prevention Program</a></li>
+            <li><a href="https://www.setembroamarelo.com.br/" target="_blank" rel="noopener noreferrer">Setembro Amarelo Brasil - Site oficial</a></li>
+            <li><a href="https://www.abp.org.br/" target="_blank" rel="noopener noreferrer">Associação Brasileira de Psiquiatria (ABP)</a></li>
+          </ul>
+        </div>
+
+        <div class="mike-legado">
+          <i class="fas fa-quote-left"></i> 
+          "O amarelo do Mustang de Mike se tornou símbolo de esperança e prevenção no mundo inteiro. Sua história nos lembra que falar sobre saúde mental pode salvar vidas."
+          <div style="margin-top: 0.5rem; font-style: normal; font-weight: 500; font-size: 0.9rem; color: var(--dourado-escuro);">
+            — Legado de Mike Emme, 1994
+          </div>
+        </div>
+      </section>
+
+      <div class="cards-grid">
+        <div class="card">
+          <i class="fas fa-heart-circle-check"></i>
+          <h3>Autocuidado</h3>
+          <p>Pequenas pausas, respiração consciente e momentos de silêncio ajudam a restaurar o equilíbrio emocional.</p>
+          <div class="card-hidden-msg">✨ "Cuide de você primeiro."</div>
+        </div>
+        <div class="card">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h3>Apoio</h3>
+          <p>Conversar com amigos, familiares ou profissionais é essencial. Você não precisa passar por isso sozinho.</p>
+          <div class="card-hidden-msg">🤝 "Você não está sozinho."</div>
+        </div>
+        <div class="card">
+          <i class="fas fa-feather-pointed"></i>
+          <h3>Leveza</h3>
+          <p>Permita-se sentir, sem julgamento. A saúde mental floresce quando acolhemos nossas emoções.</p>
+          <div class="card-hidden-msg">🍃 "Acolha suas emoções."</div>
+        </div>
+      </div>
+
+      <section class="emergencia-section">
+        <h2><i class="fas fa-phone"></i> Números de apoio 24h <span style="font-size: 1.2rem; margin-left: 8px;"><i class="fas fa-ribbon laco-amarelo"></i></span></h2>
+        <div class="emergencia-grid">
+          <div class="numero-card">
+            <div class="num">188</div>
+            <div class="desc">CVV – Centro de Valorização da Vida</div>
+            <div class="small-desc">Atendimento gratuito, sigiloso e 24h</div>
+            <div class="num-hidden-msg">💛 Ligue, você importa</div>
+          </div>
+          <div class="numero-card">
+            <div class="num">190</div>
+            <div class="desc">Polícia Militar</div>
+            <div class="small-desc">Emergências e situações de risco</div>
+            <div class="num-hidden-msg">🛡️ Sua segurança em primeiro lugar</div>
+          </div>
+          <div class="numero-card">
+            <div class="num">192</div>
+            <div class="desc">SAMU</div>
+            <div class="small-desc">Serviço de Atendimento Móvel de Urgência</div>
+            <div class="num-hidden-msg">🚑 Socorro sempre disponível</div>
+          </div>
+          <div class="numero-card">
+            <div class="num">100</div>
+            <div class="desc">Disque Direitos Humanos</div>
+            <div class="small-desc">Denúncias e orientação sobre violações</div>
+            <div class="num-hidden-msg">⚖️ Seus direitos importam</div>
+          </div>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #2e2416; text-align: center; background: rgba(255,248,220,0.5); padding: 0.6rem; border-radius: 60px; border: 2px dashed var(--dourado);">
+          <i class="fas fa-ribbon laco-amarelo" style="margin-right: 6px;"></i> Ligue: você não está sozinho(a). Todos os serviços são gratuitos e confidenciais. <i class="fas fa-sun sol-icon" style="margin-left: 6px;"></i>
+        </p>
+      </section>
+
+      <section class="ongs-section">
+        <h2><i class="fas fa-hand-holding-heart"></i> ONGs de apoio à saúde mental <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px; font-size: 1.8rem;"></i></h2>
+        <div class="ongs-grid">
+          <a href="https://www.cvv.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+            <div class="ong-icon"><i class="fas fa-phone-alt"></i></div>
+            <h3>CVV</h3>
+            <div class="ong-desc">Centro de Valorização da Vida – apoio emocional e prevenção ao suicídio.</div>
+            <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+            <div class="ong-hidden-msg">💛 "Sua vida tem valor"</div>
+          </a>
+          <a href="https://www.saudemental.org.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+            <div class="ong-icon"><i class="fas fa-globe-americas"></i></div>
+            <h3>Instituto Saúde Mental</h3>
+            <div class="ong-desc">Promoção de saúde mental, pesquisa e combate ao estigma.</div>
+            <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+            <div class="ong-hidden-msg">🌍 "Saúde mental é direito de todos"</div>
+          </a>
+          <a href="https://www.setembroamarelo.com.br/" target="_blank" rel="noopener noreferrer" class="ong-card">
+            <div class="ong-icon"><i class="fas fa-ribbon"></i></div>
+            <h3>Setembro Amarelo Brasil</h3>
+            <div class="ong-desc">Campanha oficial de prevenção ao suicídio no Brasil.</div>
+            <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+            <div class="ong-hidden-msg">💛 "Falar é a melhor solução"</div>
+          </a>
+          <a href="https://www.instagram.com/saudementalefacil/" target="_blank" rel="noopener noreferrer" class="ong-card">
+            <div class="ong-icon"><i class="fas fa-hand-sparkles"></i></div>
+            <h3>Saúde Mental Fácil</h3>
+            <div class="ong-desc">Projeto de educação e conscientização sobre saúde mental para jovens.</div>
+            <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+            <div class="ong-hidden-msg">🌟 "Informação é cuidado"</div>
+          </a>
+          <a href="https://www.instagram.com/psicologianapratica/" target="_blank" rel="noopener noreferrer" class="ong-card">
+            <div class="ong-icon"><i class="fas fa-brain"></i></div>
+            <h3>Psicologia na Prática</h3>
+            <div class="ong-desc">Conteúdo educativo sobre saúde mental e bem-estar emocional.</div>
+            <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+            <div class="ong-hidden-msg">🧠 "Conhecimento que transforma"</div>
+          </a>
+          <a href="https://www.instagram.com/psicologiacompassiva/" target="_blank" rel="noopener noreferrer" class="ong-card">
+            <div class="ong-icon"><i class="fas fa-heart"></i></div>
+            <h3>Psicologia Compassiva</h3>
+            <div class="ong-desc">Acolhimento e orientação em saúde mental para jovens e adultos.</div>
+            <span class="ong-link">Acessar site <i class="fas fa-arrow-right"></i></span>
+            <div class="ong-hidden-msg">💛 "Compaixão que cura"</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="pesquisas-section">
+        <h2><i class="fas fa-microscope"></i> Pesquisas em destaque <i class="fas fa-sun sol-icon" style="margin-left: 8px; font-size: 1.8rem;"></i></h2>
+        <div class="pesquisas-grid">
+          <a href="https://www.who.int/news-room/fact-sheets/detail/mental-disorders" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+            <div class="icone-pesq"><i class="fas fa-globe-americas"></i></div>
+            <h3>OMS · Transtornos mentais</h3>
+            <span class="fonte"><i class="far fa-file-alt"></i> Organização Mundial da Saúde</span>
+            <p>Dados globais sobre prevalência de depressão, ansiedade e impacto na saúde pública.</p>
+            <span class="seta">Acessar pesquisa →</span>
+            <div class="pesquisa-hidden-msg">📊 "Conhecimento salva vidas"</div>
+          </a>
+          <a href="https://www.revistas.usp.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+            <div class="icone-pesq"><i class="fas fa-university"></i></div>
+            <h3>USP · Saúde mental juvenil</h3>
+            <span class="fonte"><i class="far fa-file-alt"></i> Universidade de São Paulo</span>
+            <p>Pesquisas sobre ansiedade e depressão entre adolescentes brasileiros.</p>
+            <span class="seta">Acessar pesquisa →</span>
+            <div class="pesquisa-hidden-msg">🧑‍🎓 "Juventude e saúde mental"</div>
+          </a>
+          <a href="https://portal.fiocruz.br/noticia/saude-mental-e-importante-para-o-bem-estar-dos-trabalhadores" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+            <div class="icone-pesq"><i class="fas fa-brazil"></i></div>
+            <h3>Fiocruz · Saúde e trabalho</h3>
+            <span class="fonte"><i class="far fa-file-alt"></i> Fundação Oswaldo Cruz</span>
+            <p>Impacto do ambiente laboral na saúde mental dos trabalhadores brasileiros.</p>
+            <span class="seta">Acessar pesquisa →</span>
+            <div class="pesquisa-hidden-msg">👷 "Trabalho com saúde mental"</div>
+          </a>
+          <a href="https://www.scielo.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+            <div class="icone-pesq"><i class="fas fa-book-open"></i></div>
+            <h3>SciELO · Saúde mental Brasil</h3>
+            <span class="fonte"><i class="far fa-file-alt"></i> Scientific Electronic Library Online</span>
+            <p>Artigos científicos sobre saúde mental, depressão e ansiedade no Brasil.</p>
+            <span class="seta">Acessar pesquisa →</span>
+            <div class="pesquisa-hidden-msg">📚 "Ciência brasileira"</div>
+          </a>
+          <a href="https://www.abp.org.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+            <div class="icone-pesq"><i class="fas fa-psychiatry"></i></div>
+            <h3>ABP · Diretrizes brasileiras</h3>
+            <span class="fonte"><i class="far fa-file-alt"></i> Associação Brasileira de Psiquiatria</span>
+            <p>Diretrizes e pesquisas sobre tratamento de transtornos mentais no Brasil.</p>
+            <span class="seta">Acessar pesquisa →</span>
+            <div class="pesquisa-hidden-msg">🧠 "Referência nacional"</div>
+          </a>
+          <a href="https://www.revista.ufpe.br/" target="_blank" rel="noopener noreferrer" class="pesquisa-card">
+            <div class="icone-pesq"><i class="fas fa-graduation-cap"></i></div>
+            <h3>UFPE · Ansiedade escolar</h3>
+            <span class="fonte"><i class="far fa-file-alt"></i> Universidade Federal de Pernambuco</span>
+            <p>Estudos sobre ansiedade e desempenho escolar em adolescentes brasileiros.</p>
+            <span class="seta">Acessar pesquisa →</span>
+            <div class="pesquisa-hidden-msg">📖 "Pesquisa acadêmica"</div>
+          </a>
+        </div>
+        <p style="margin-top: 1.8rem; font-size: 0.95rem; color: #2e2416; text-align: center; background: rgba(255,248,220,0.5); padding: 0.6rem; border-radius: 60px; border: 2px dashed var(--dourado);">
+          <i class="fas fa-hand-pointer" style="color: var(--dourado-escuro);"></i> Clique em qualquer balão para acessar as pesquisas
+        </p>
+      </section>
+
+      <div class="quote-block">
+        <blockquote>
+          <i class="fas fa-quote-left"></i> 
+          "A saúde mental é um estado de bem-estar no qual o indivíduo percebe as suas próprias capacidades, pode lidar com o estresse da vida, trabalhar de forma produtiva e contribuir para a sua comunidade."
+          <span>— OMS</span>
+        </blockquote>
+        <div class="autor"><i class="fas fa-angles-right" style="color: var(--dourado-escuro);"></i> Organização Mundial da Saúde <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px;"></i></div>
+        <div class="quote-hidden-msg">🌻 "Você tem um propósito único."</div>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin: 1rem 0 0.5rem;">
+        <button class="surpresa-btn" id="surpresaBtn">
+          <i class="fas fa-star" style="margin-right: 8px;"></i> Clique para uma mensagem especial
+        </button>
+      </div>
+
+      <div class="recursos">
+        <div class="info">
+          <h4><i class="fas fa-phone-volume" style="color: var(--dourado-escuro); margin-right: 8px;"></i> Apoio disponível <i class="fas fa-ribbon laco-amarelo" style="margin-left: 6px;"></i></h4>
+          <p><i class="fas fa-circle" style="color: var(--dourado-escuro); font-size: 0.6rem; vertical-align: middle;"></i> Ligue para o CVV: 188 (24h) · chat online</p>
+          <p style="font-size: 0.9rem; opacity: 0.8;"><i class="fas fa-clock"></i> Atendimento gratuito e sigiloso</p>
+        </div>
+        <div class="btn" id="apoioBtn">
+          <i class="fas fa-arrow-right"></i> Central de ajuda
+        </div>
+      </div>
+
+      <!-- SEÇÃO MOTIVACIONAL FINAL -->
+      <section class="motivacional-final">
+        <h2>💛 Uma mensagem especial para você</h2>
+        <div class="frase-motivacional">
+          <i class="fas fa-quote-left" style="margin-right: 10px;"></i>
+          "A vida é como uma corrida: cada um tem seu próprio ritmo. 
+          Não se compare aos outros, valorize cada passo que você dá. 
+          Você é único, especial e capaz de transformar o mundo com sua luz. 
+          Lembre-se: <strong>não importa o quão devagar você vá, desde que não pare.</strong>"
+          <i class="fas fa-quote-right" style="margin-left: 10px;"></i>
+        </div>
+        <div style="font-size: 1.3rem; margin: 0.5rem 0 1rem; color: #2e2416; font-weight: 500;">
+          💪 Você é mais forte do que imagina. Acredite em si mesmo!
+        </div>
+        <div style="font-size: 1.2rem; margin-bottom: 1rem;">
+          🌻 <strong>Setembro Amarelo</strong> — Sua vida importa, sua voz faz diferença!
+        </div>
+        <div class="turma">
+          <i class="fas fa-graduation-cap"></i> Trabalho realizado pelos alunos do 1º B Informática
+        </div>
+        <div class="integrantes">
+          <span>✨ Eshila Fernanda</span>
+          <span>🌺 Marina Alves</span>
+          <span>🚀 Davi Ferreira</span>
+          <span>🌟 Victória Régia</span>
+          <span>📚 Pedro Lucas Lopes</span>
+          <span>💫 Emily Diogo</span>
+          <span>🌸 Lorena Teixeira</span>
+        </div>
+        <div style="margin-top: 1.2rem; font-size: 0.95rem; opacity: 0.8;">
+          <i class="fas fa-heart" style="color: var(--dourado-escuro);"></i> 
+          Com carinho, dedicação e a esperança de que todos possam encontrar luz mesmo nos dias mais escuros. 
+          <i class="fas fa-heart" style="color: var(--dourado-escuro);"></i>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="simbolo">
+          <i class="fas fa-circle" style="color: var(--dourado-escuro);"></i>
+          <i class="fas fa-circle" style="color: #FFF8DC; text-shadow: 0 0 0 var(--dourado-escuro);"></i>
+          <i class="fas fa-circle" style="color: var(--dourado-escuro);"></i>
+          <i class="fas fa-ribbon laco-amarelo" style="margin-left: 8px;"></i>
+        </div>
+        <div>
+          <small>© 2026 · Saúde Mental nas Escolas</small>
+        </div>
+        <div class="autoria">
+          <i class="fas fa-graduation-cap"></i> 1º B Informática · Eshila, Marina, Davi, Victória, Pedro, Emily, Lorena
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- MODAL -->
   <div class="modal-msg" id="modalMsg">
     <div class="modal-content">
       <button class="modal-close" id="modalClose">✕</button>
@@ -1897,7 +2126,9 @@
       "A vida pode ser difícil, mas você já sobreviveu a todos os seus dias difíceis até aqui.",
       "Cuidar da sua mente é um ato de coragem. Você merece esse cuidado.",
       "Sorria, mesmo que esteja doendo. Um dia o sol voltará a brilhar para você.",
-      "Você é uma obra em construção, e cada cicatriz conta uma história de superação."
+      "Você é uma obra em construção, e cada cicatriz conta uma história de superação.",
+      "Acredite em si mesmo. Você é capaz de alcançar coisas incríveis.",
+      "A esperança é a luz que nos guia mesmo nos dias mais escuros."
     ];
 
     document.getElementById('surpresaBtn').addEventListener('click', function() {
@@ -1931,6 +2162,14 @@
         document.getElementById('modalMsg').classList.remove('active');
       }
     });
+
+    // Remover splash screen após animação
+    setTimeout(function() {
+      const splash = document.getElementById('splashScreen');
+      if (splash) {
+        splash.style.display = 'none';
+      }
+    }, 4500);
   </script>
 </body>
 </html>
